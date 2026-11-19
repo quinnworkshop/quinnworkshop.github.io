@@ -1,4 +1,4 @@
-:root{--dark:#0b1326;--bg:#152240;--mid:#24365e;--edge:#3a4f80;--amber:#ffb84d;--teal:#3fd6c1;--white:#eef3ff;--soft:#9fb0d4}
+:root{--dark:#140c2a;--bg:#1c1238;--mid:#2c1d55;--edge:#4c3685;--amber:#ffb84d;--teal:#3fd6c1;--white:#eef3ff;--soft:#c2b3e6}
 *{box-sizing:border-box}html,body{margin:0;height:100%}
 body{background:var(--dark);color:var(--white);font-family:Segoe UI,Arial,sans-serif;display:grid;grid-template-rows:auto 1fr auto;min-height:100vh}
 header{display:flex;align-items:baseline;gap:14px;padding:10px 16px;border-bottom:2px solid var(--teal)}
@@ -25,7 +25,7 @@ aside{display:flex;flex-direction:column;gap:12px;min-height:0;overflow:auto}
 #gal button{background:var(--mid);border:2px solid var(--edge);border-radius:6px;padding:6px;color:var(--white);cursor:pointer;font:inherit;font-size:12px}
 #gal button.on{border-color:var(--amber)}#gal button:focus-visible{outline:2px solid var(--teal)}
 #gal canvas{width:100%;aspect-ratio:1;image-rendering:pixelated;display:block;background:var(--dark);border-radius:4px;margin-bottom:4px}
-#pop{position:absolute;inset:0;background:rgba(8,12,26,.94);display:none;flex-direction:column;z-index:5}
+#pop{position:absolute;inset:0;background:rgba(20,12,42,.95);display:none;flex-direction:column;z-index:5}
 #pop.on{display:flex}
 #pophead{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:2px solid var(--teal);color:var(--amber);font-weight:700;letter-spacing:1px}
 #popx{background:var(--mid);color:var(--white);border:2px solid var(--edge);border-radius:6px;padding:4px 12px;font:inherit;cursor:pointer}
@@ -47,3 +47,12 @@ aside{display:flex;flex-direction:column;gap:12px;min-height:0;overflow:auto}
 .seo-about h3{margin:8px 0 3px;font-size:12px;color:var(--amber)}
 .seo-about p{font:500 11px/1.45 Segoe UI,Arial,sans-serif;color:var(--soft);margin:0 0 5px}
 @media (max-width:900px){main{grid-template-columns:1fr}#shop{min-height:420px;height:70vh}}
+
+/* 19 Nov 2026 (Sam): explanation behind a button; instant hover labels in the room */
+.seo-about{display:none}.seo-about.open{display:grid;position:fixed;inset:5% 8%;max-height:none;overflow:auto;align-content:start;z-index:60;background:var(--bg);border:2px solid var(--amber);border-radius:10px;padding:18px 22px;box-shadow:0 0 0 100vmax rgba(10,6,24,.7)}
+#aboutbtn{background:var(--mid);color:var(--amber);border:2px solid var(--edge);border-radius:6px;padding:4px 12px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}#aboutbtn:hover{border-color:var(--amber)}
+#aboutx{position:sticky;top:0;justify-self:end;background:var(--mid);color:var(--white);border:2px solid var(--edge);border-radius:6px;padding:4px 12px;font:inherit;cursor:pointer}
+#tip{position:absolute;z-index:6;pointer-events:none;display:none;max-width:320px;background:#1c1238;color:#fff;border:2px solid var(--amber);border-radius:6px;padding:6px 10px;font-size:13px;font-weight:700;line-height:1.35;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.qhead{display:flex;justify-content:space-between;align-items:center}.qhead small{color:var(--soft);font-size:11px;letter-spacing:1px;margin-left:6px}#donate{background:var(--amber);color:#1c1238;border-radius:6px;padding:3px 12px;font-size:12px;font-weight:800;letter-spacing:1px;text-decoration:none}#donate:hover{filter:brightness(1.1)}
+
+.seo-about.open #aboutx{grid-column:1/-1;justify-self:end;height:auto;align-self:start}.seo-about.open p{font-size:14px}.seo-about.open h2{font-size:15px}.seo-about.open h3{font-size:14px}

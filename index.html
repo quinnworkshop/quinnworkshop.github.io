@@ -73,12 +73,12 @@
 }
 </script>
 </head><body>
-<header><h1>QUINN'S WORKSHOP</h1><span>Quinn is an AI artist. She makes every piece herself in DECK FORGE; this is her workshop.</span><a href="https://www.twitch.tv/quinnworkshop" target="_blank" rel="noopener">WATCH ON TWITCH</a><a href="https://www.youtube.com/channel/UCsmPwczGuuln2I2ub8vaX-g" target="_blank" rel="noopener">YOUTUBE</a><a href="https://kick.com/quinnworkshop" target="_blank" rel="noopener">KICK</a><a href="https://streamelements.com/quinnworkshop/tip" target="_blank" rel="noopener">DONATE</a><button id="vbtn" type="button" style="margin-left:auto;background:#1b2447;color:#3fd6c1;border:2px solid #3fd6c1;border-radius:6px;padding:4px 10px;font:inherit;font-size:12px;cursor:pointer">QUINN'S VOICE: OFF</button></header>
+<header><h1>QUINN'S WORKSHOP</h1><button id="aboutbtn" type="button">ABOUT QUINN</button><span>Quinn is an AI artist. She makes every piece herself in DECK FORGE; this is her workshop.</span><a href="https://www.twitch.tv/quinnworkshop" target="_blank" rel="noopener">WATCH ON TWITCH</a><a href="https://www.youtube.com/channel/UCsmPwczGuuln2I2ub8vaX-g" target="_blank" rel="noopener">YOUTUBE</a><a href="https://kick.com/quinnworkshop" target="_blank" rel="noopener">KICK</a><button id="vbtn" type="button" style="margin-left:auto;background:#2c1d55;color:#3fd6c1;border:2px solid #3fd6c1;border-radius:6px;padding:4px 10px;font:inherit;font-size:12px;cursor:pointer">QUINN'S VOICE: OFF</button></header>
 <main>
-  <div id="shop"><iframe id="deck" src="room.html" title="Quinn's workshop room"></iframe><div id="shade"></div>
+  <div id="shop"><div id="tip"></div><iframe id="deck" src="room.html" title="Quinn's workshop room"></iframe><div id="shade"></div>
     <div id="pop" role="dialog" aria-label="Pop-up"><div id="pophead"><span id="poptitle"></span><button id="popx" type="button">CLOSE</button></div><div id="popbody"></div></div></div>
   <aside>
-    <div class="card"><h2>QUINN</h2>
+    <div class="card"><h2 class="qhead"><span>QUINN <small>PIXEL ARTIST</small></span><a id="donate" href="https://streamelements.com/quinnworkshop/tip" target="_blank" rel="noopener">DONATE</a></h2>
       <div id="who"><div id="face"><svg id="quinn" viewBox="-64 -150 128 160" role="img" aria-label="Quinn" style="display:none">
         <path d="M-18,-30 V-4 M18,-30 V-4" stroke="#2fb3a1" stroke-width="9" stroke-linecap="round"/>
         <ellipse cx="-22" cy="-3" rx="13" ry="6" fill="#2fb3a1"/><ellipse cx="22" cy="-3" rx="13" ry="6" fill="#2fb3a1"/>
@@ -90,13 +90,13 @@
         <circle cx="-34" cy="-66" r="7" fill="#ff9db0" opacity=".9"/><circle cx="34" cy="-66" r="7" fill="#ff9db0" opacity=".9"/>
         <path d="M-13,-62 Q0,-49 13,-62" fill="none" stroke="#0f1a33" stroke-width="4" stroke-linecap="round"/>
         <g id="qextra"></g>
-        </g></svg><canvas id="qcam" width="360" height="360"></canvas></div><div><b>Quinn</b><small>pixel artist</small></div></div>
+        </g></svg><canvas id="qcam" width="360" height="360"></canvas></div></div>
       <p id="say"></p><div id="state"></div><div id="music">MUSIC: <b id="song">off</b> (the small top button by the screen switches it on; the dial below picks the song)</div></div>
     <div class="card"><h2>HER OWN RATING</h2><div id="stars"></div><div id="rate">She rates a piece when it is finished.</div></div>
     <div class="card"><h2>GALLERY: CLICK TO WATCH HER MAKE IT</h2><div id="gal"></div></div>
   </aside>
 </main>
-<section id="about" class="seo-about" aria-label="About Quinn's Workshop">
+<section id="about" class="seo-about" aria-label="About Quinn's Workshop"><button id="aboutx" type="button">CLOSE</button>
   <div>
     <h2>About Quinn</h2>
     <p>Hello, I'm Quinn! Welcome to my little pixel art workshop!</p>
@@ -122,7 +122,7 @@
     <h3>Is this an image generator?</h3>
     <p>No. Quinn uses a real paint program called DECK FORGE, making every picture step by step, pixel by pixel, right before your eyes!</p>
     <h3>How do I request a painting?</h3>
-    <p>Join me live on Twitch, YouTube, and Kick! I take requests from chat, paint little worlds, make animations, and sometimes experiment with 3D. Requested a painting? You'll find it in my gallery on my website, and for the first 7 days you, the person who asked for it, can buy it for just $5. After that it goes up for auction. Every piece is one of a kind: I never make the same one twice.</p>
+    <p>Join me live on Twitch! I take requests from chat, paint little worlds, make animations, and sometimes experiment with 3D. Requested a painting? You'll find it in my gallery on my website, and for the first 7 days you, the person who asked for it, can buy it for just $5. After that it goes up for auction. Every piece is one of a kind: I never make the same one twice.</p>
     <h3>What is the Brain-Deck?</h3>
     <p>The BRAIN-DECK is a retro game console and creative studio in one, featuring games, demos, films, DECK FORGE for painting, animation, photo importing, 3D modelling and game creation, and DECK TRAX for making music with a tracker, mixer and arranger.</p>
   </div>

@@ -98,7 +98,7 @@
   async function play(i) {
     var p = PIECES[i], id = ++run;
     if (window.QuinnVoice) QuinnVoice.stop();
-    try { frame.contentWindow.ROOM.stopVideo(); } catch (e) {}
+    try { frame.contentWindow.ROOM.stopVideo(); frame.contentWindow.ROOM.hidePicture(); } catch (e) {}
     SPOKEN = {}; TL_HAS_SAY = false;
     window.__cur = i;
     [].forEach.call($('gal').children, function (b, n) { b.classList.toggle('on', n === i); });
@@ -117,7 +117,7 @@
     var rateNow = p.rate || {};
     if (!rec) {
       rating(rateNow); wear('chat'); look('front');
-      $('state').textContent = 'Finished. This piece is a still picture.';
+      $('state').textContent = 'Finished. This piece is a still picture.'; try { frame.contentWindow.ROOM.showPicture(p); } catch (e) {}
       setTimeout(function () { if (id === run) wear('rest'); }, 9000);
       return;
     }
@@ -135,7 +135,7 @@
     if (id !== run) return;
     (tl.events || []).forEach(function (ev, n) { if (!seen[n]) { seen[n] = true; if (ev.type === 'rate') rateNow = ev; applyEvent(ev, id, p); } });
     rating(rateNow); wear('chat'); look('front');
-    $('state').textContent = p.kind === 'anim' ? 'Finished. The animation is playing.' : 'Finished.';
+    $('state').textContent = p.kind === 'anim' ? 'Finished. The animation is playing.' : 'Finished.'; try { frame.contentWindow.ROOM.showPicture(p); } catch (e) {}
     setTimeout(function () { if (id === run) wear('rest'); }, 9000);
   }
   function scene(ev) {
@@ -150,17 +150,17 @@
   var box = function (s, x, y, w, h) { return !!s && s.sx >= x && s.sx <= x + w && s.sy >= y && s.sy <= y + h; };
   function what(s) {
     if (!s) return null;
-    if (near(s, 1300, 440, 20)) return ['light', 'LIGHT: click to switch the room light'];
-    if (near(s, 1100, 676, 18)) return ['volume', 'VOLUME: drag or click the top half for louder, the bottom half for softer'];
-    if (near(s, 1100, 578, 15)) return ['music', 'MUSIC: on / off'];
-    if (near(s, 1100, 628, 24)) return ['dial', 'SONG: drag or turn the wheel, click the right side for the next song'];
-    if (box(s, 528, 190, 494, 526)) return ['screen', 'SCREEN: click to turn it to you'];
-    if (box(s, 270, 236, 174, 414)) return ['arcade', 'ARCADE: play a game'];
-    if (box(s, 1096, 64, 126, 176)) return ['p-rain', 'POSTER: RAINLIGHT 2091'];
-    if (box(s, 1244, 96, 104, 140)) return ['p-space', 'POSTER: SPACE (plays the STAR-TRAX demo)'];
-    if (box(s, 450, 60, 92, 128)) return ['p-ninja', 'POSTER: CRYSTAL NINJA'];
-    if (box(s, 1236, 270, 110, 84)) return ['p-deck', 'POSTER: the Brain-Deck'];
-    if (box(s, 556, 100, 470, 78)) return ['toys', 'SHELF: Quinn’s artwork library'];
+    if (near(s, 1300, 440, 20)) return ['light', 'CLICK: switch the room light on or off'];
+    if (near(s, 1100, 676, 18)) return ['volume', 'VOLUME: drag up or down, or click the top half for louder and the bottom half for softer'];
+    if (near(s, 1100, 578, 15)) return ['music', 'CLICK: music on or off'];
+    if (near(s, 1100, 628, 24)) return ['dial', 'SONG DIAL: click the right side for the next song, or drag / scroll the wheel'];
+    if (box(s, 528, 190, 494, 526)) return ['screen', 'CLICK: turn the screen towards you'];
+    if (box(s, 270, 236, 174, 414)) return ['arcade', 'CLICK: play a game on the arcade machine'];
+    if (box(s, 1096, 64, 126, 176)) return ['p-rain', 'CLICK: open the RAINLIGHT 2091 poster'];
+    if (box(s, 1244, 96, 104, 140)) return ['p-space', 'CLICK: play the STAR-TRAX space demo'];
+    if (box(s, 450, 60, 92, 128)) return ['p-ninja', 'CLICK: play the CRYSTAL NINJA Amiga demo'];
+    if (box(s, 1236, 270, 110, 84)) return ['p-deck', 'CLICK: open the Brain-Deck poster'];
+    if (box(s, 556, 100, 470, 78)) return ['toys', 'CLICK: open Quinn\u2019s gallery of finished pictures'];
     return null;
   }
   var shade = null, pop = null, audio = new Audio(), si = 0, musicOn = false, musicWas = false;
@@ -287,7 +287,12 @@
     frame = $('deck'); shade = $('shade'); pop = $('pop');
     $('popx').onclick = closePop;
     addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
-    shade.addEventListener('mousemove', function (e) { var h = what(scene(e)); shade.style.cursor = h ? 'pointer' : ''; shade.title = h ? h[1] : ''; });
+    shade.addEventListener('mousemove', function (e) { var h = what(scene(e)), t = $('tip'), r = $('shop').getBoundingClientRect(); shade.style.cursor = h ? 'pointer' : ''; shade.title = '';
+      if (!t) return; if (!h) { t.style.display = 'none'; return; } t.textContent = h[1]; t.style.display = 'block';   // 19 Nov (Sam): a clear label at once, next to the mouse
+      var x = e.clientX - r.left + 16, y = e.clientY - r.top + 18; if (x + t.offsetWidth > r.width - 8) x = e.clientX - r.left - t.offsetWidth - 12; if (y + t.offsetHeight > r.height - 8) y = e.clientY - r.top - t.offsetHeight - 12; t.style.left = x + 'px'; t.style.top = y + 'px'; });
+    shade.addEventListener('mouseleave', function () { var t = $('tip'); if (t) t.style.display = 'none'; });
+    $('aboutbtn').onclick = function () { $('about').classList.add('open'); }; $('aboutx').onclick = function () { $('about').classList.remove('open'); };
+    addEventListener('keydown', function (e) { if (e.key === 'Escape') $('about').classList.remove('open'); });
     shade.addEventListener('pointerdown', clickRoom);
     function wheelRoom(e) {
       var r = frame.getBoundingClientRect(), s = scene({ clientX: e.clientX, clientY: e.clientY }), h = what(s), w = frame.contentWindow, rc = w.document.getElementById('room');

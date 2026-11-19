@@ -32,7 +32,19 @@ const room = {
   start() { DeckRoom.start(rc, 'room', 'kid'); },
   look(to) { DeckKid.go(to); },
   volume() { return out.gain.value; },
-  stopVideo() {
+  // 19 Nov 2026 (Sam): when a replay ends, her monitor shows the WHOLE finished picture (an animation keeps playing) until
+  // another painting is clicked. p = a piece from pieces.js (thumb = the dots Forge saved, pal = its colours).
+  showPicture(p) {
+    let c = document.getElementById('donePic');
+    if (!c) { c = document.createElement('canvas'); c.id = 'donePic'; c.width = 642; c.height = 564; c.style.cssText = 'position:absolute;left:0;top:0;z-index:3;image-rendering:pixelated;background:#000'; document.getElementById('bezel').appendChild(c); }
+    clearInterval(room._picTimer); c.style.width = cv.style.width; c.style.height = cv.style.height; c.style.display = 'block';
+    const g = c.getContext('2d'), n = p.size, s = Math.max(1, Math.floor(Math.min(c.width, c.height) * 0.88 / n)), x0 = Math.floor((c.width - n * s) / 2), y0 = Math.floor((c.height - n * s) / 2);
+    let k = 0; const frames = (p.thumb && p.thumb.length) ? p.thumb : [];
+    const draw = () => { if (!frames.length) return; const px = frames[k % frames.length]; g.fillStyle = '#000'; g.fillRect(0, 0, c.width, c.height);
+      for (let i = 0; i < px.length; i++) if (px[i]) { const h = String(p.pal[px[i] - 1] || '#000'); g.fillStyle = h[0] === '#' ? h : '#' + h; g.fillRect(x0 + (i % n) * s, y0 + Math.floor(i / n) * s, s, s); } k++; };
+    draw(); if (frames.length > 1) room._picTimer = setInterval(draw, p.ms || 150);
+  },
+  hidePicture() { clearInterval(room._picTimer); const c = document.getElementById('donePic'); if (c) c.style.display = 'none'; },  stopVideo() {
     video.pause();
     video.style.display = 'none';
     video.removeAttribute('src');
