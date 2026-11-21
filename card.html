@@ -25,7 +25,8 @@ loadCards(function (r) { var c = r && r.cards.filter(function (x) { return x.ser
    ['Owner', c.owner || 'Not sold yet'], ['Fingerprint', c.fingerprint]].forEach(function (x) { dl.appendChild(el('dt', '', x[0])); dl.appendChild(el('dd', '', x[1])); });
   card.appendChild(dl); out.appendChild(card);
   var b = el('div', 'box');
-  if (!c.owner) { b.innerHTML = '<b>Get this card for ' + money(r.price) + '.</b><ul><li>Pay on the tip page.</li><li>In the message write <code>' + c.serial + '</code> and your name.</li><li>Quinn\'s studio then sends you the full card file and puts your name here as the owner.</li></ul><p><a class="btn" href="' + TIP + '" target="_blank" rel="noopener">Get this card</a></p>'; }
+  if (!c.owner && c.status === 'reserved') { b.innerHTML = '<b>This card was made on request.</b><p>It is reserved for the viewer who asked for it, at ' + money(r.request_price) + '. If nobody claims it, it may be put on sale later.</p>'; }
+  else if (!c.owner) { b.innerHTML = '<b>Get this card for ' + money(priceOf(r, c)) + '.</b><ul><li>Pay on the tip page.</li><li>In the message write <code>' + c.serial + '</code> and your name.</li><li>Quinn\'s studio then sends you the full card file and puts your name here as the owner.</li></ul><p><a class="btn" href="' + TIP + '" target="_blank" rel="noopener">Get this card</a></p>'; }
   else { b.innerHTML = '<b>This card belongs to ' + c.owner.replace(/[<>&]/g, '') + '.</b><p>Selling or trading it? Tell us the new owner and the price. The register is changed and a fee of ' + r.fee_percent + '% of the sale price is paid to the studio. A card whose new owner is not in the register counts as owner unconfirmed.</p>'; }
   out.appendChild(b);
   var h = el('div', 'box'); h.appendChild(el('b', '', 'History')); var ul = el('ul');

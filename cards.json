@@ -1,6 +1,5 @@
 {
  "next": 116,
- "price": 5,
  "fee_percent": 20,
  "cards": [
   {
@@ -247,13 +246,14 @@
    "made": "2026-11-18 14:31",
    "fingerprint": "f7c87364f5051b62d880d7c177465ab6b9c733965636eea5f83a497df34bafdf",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-18",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000015",
@@ -337,13 +337,14 @@
    "made": "2026-11-18 15:19",
    "fingerprint": "3f52f13bbfeb9446509e4c89d0e69f792459d14e8cc17edd339d768314ad6658",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-18",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000020",
@@ -499,13 +500,14 @@
    "made": "2026-11-19 04:32",
    "fingerprint": "33240c0435b252c5346396083ba711e4e8298098c7fc6bf2ad2c00a680ec6185",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000029",
@@ -751,13 +753,14 @@
    "made": "2026-11-19 06:52",
    "fingerprint": "540ca312b6a4f43eb1f6d509236ee861d918cf8494ec76715ea9cf68717babe3",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000043",
@@ -949,13 +952,14 @@
    "made": "2026-11-19 09:16",
    "fingerprint": "fe01adec3ed7af1bd8a2b5c4f8f4dcccf4b2309e18b094ef873b7ade7c100f17",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000054",
@@ -1075,13 +1079,14 @@
    "made": "2026-11-19 11:36",
    "fingerprint": "419707d5eaddf0d88a22d888fd23a5904f348c35c2a76d85b4f1059369c327e0",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000061",
@@ -1129,13 +1134,14 @@
    "made": "2026-11-19 12:10",
    "fingerprint": "d4a5f9a0cdcf4df0eb6a17e7c354ef475a9b31ad9d151415284cfb11b25b082c",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000064",
@@ -1201,13 +1207,14 @@
    "made": "2026-11-19 13:08",
    "fingerprint": "979f065b994120b7f5a8ef24998c066d19fac3644b92f8d5c5b31e32d69c8fbd",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000068",
@@ -1237,13 +1244,14 @@
    "made": "2026-11-19 13:39",
    "fingerprint": "58439bcaa7c938d855bbf46b4f651d902d7a8cb54998144340638125729f9b2a",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000070",
@@ -1273,13 +1281,14 @@
    "made": "2026-11-19 14:02",
    "fingerprint": "84c4a8b548e46490612dc9601ce9832a0cbc4b2325577dbcc5e0a4e5f3ddba78",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000072",
@@ -1417,13 +1426,14 @@
    "made": "2026-11-19 15:57",
    "fingerprint": "8ac8475f30bbc22cc543dcc27272289105dc12bee651017fc61922346ee4ae5d",
    "owner": "",
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
     }
-   ]
+   ],
+   "requested": true
   },
   {
    "serial": "QW-000080",
@@ -2073,5 +2083,12 @@
     }
    ]
   }
- ]
+ ],
+ "prices": {
+  "16": 3.99,
+  "32": 4.99,
+  "64": 5.99,
+  "128": 6.99
+ },
+ "request_price": 5
 }

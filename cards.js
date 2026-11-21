@@ -8,3 +8,4 @@ function drawer(canvas, p) { var n = p.size, k = 0; canvas.width = canvas.height
   draw(); if (p.thumb.length > 1) setInterval(draw, p.ms || 150); }
 function el(t, c, txt) { var e = document.createElement(t); if (c) e.className = c; if (txt) e.textContent = txt; return e; }
 function money(v) { return v + ' dollars'; }
+function priceOf(reg, c) { return reg.prices[String(c.size)]; }
