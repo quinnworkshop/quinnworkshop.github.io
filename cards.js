@@ -1,6 +1,6 @@
 // QUINN CARDS page code (21 Nov 2026): reads cards.json (the register) and pieces.js (the pixels).
 var TIP = 'https://streamelements.com/quinnworkshop/tip';
-var SHOP = { digital: { 16: 'https://walcarius.gumroad.com/l/quinn16', 32: 'https://walcarius.gumroad.com/l/quinn32', 64: 'https://walcarius.gumroad.com/l/quinn64', 128: 'https://walcarius.gumroad.com/l/quinn128' }, bundle: 'https://walcarius.gumroad.com/l/quinnprint', request: 'https://walcarius.gumroad.com/l/quinnrequest', requestprint: 'https://walcarius.gumroad.com/l/quinnrequestprint', printlater: 'https://walcarius.gumroad.com/l/quinnprintlater' };   // the Gumroad product links, filled in when the products exist (empty = the tip page is used)
+var SHOP = { digital: { 16: 'https://pixelquinn.gumroad.com/l/quinn16', 32: 'https://pixelquinn.gumroad.com/l/quinn32', 64: 'https://pixelquinn.gumroad.com/l/quinn64', 128: 'https://pixelquinn.gumroad.com/l/quinn128' }, bundle: 'https://pixelquinn.gumroad.com/l/quinnprint', request: 'https://pixelquinn.gumroad.com/l/quinnrequest', requestprint: 'https://pixelquinn.gumroad.com/l/quinnrequestprint', printlater: 'https://pixelquinn.gumroad.com/l/quinnprintlater' };   // the Gumroad product links, filled in when the products exist (empty = the tip page is used)
 var BUNDLE_PRICE = 64.99, LATER_PRICE = 59.99;
 var API = 'https://quinn-cards.quinnworkshop.workers.dev';   // the address of the automatic shop (Cloudflare Worker); empty = the shop is not connected yet, the tip page is used
 
