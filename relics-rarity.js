@@ -19,13 +19,13 @@
     box.appendChild(mk('h2', '', 'Rarity')); box.appendChild(mk('span', 'rr-tier rr-' + r.tier, r.tier));
     var b = mk('div', 'rr-badges'), add = function (t) { b.appendChild(mk('span', 'rr-badge', t)); };
     if (r.first) add('First of its theme'); if (r.origin === 'requested') add('Requested by a viewer'); if (r.origin === 'self-portrait') add('Self-portrait');
-    if (r.foil) add('Gold foil'); if (r.live === 'live') add('Painted live on stream'); if (r.live === 'partly') add('Partly painted live'); if (/animation/.test(r.format)) add('Animated'); add('Season ' + r.season); box.appendChild(b);
+    if (r.foil) add('Gold foil'); if (r.live === 'live') add('Broadcast live on stream'); if (r.live === 'partly') add('Partly broadcast live');   // Sam 22 Nov: only the positive fact, nothing on the others if (/animation/.test(r.format)) add('Animated'); add('Season ' + r.season); box.appendChild(b);
     var dl = mk('dl'), row = function (k, v) { dl.appendChild(mk('dt', '', k)); dl.appendChild(mk('dd', '', v)); };
     row('Theme', r.theme + ' #' + r.edition + ' of ' + r.of);
     row('In this theme', r.of === 1 ? 'the only one so far' : r.of + ' Relics, ' + r.sold_in_theme + ' sold, ' + r.left_in_theme + ' still free');
     row('Born', (r.format || '') + ', season ' + r.season);
     var when = r.painted_at ? r.painted_at.slice(0, 16) : '';
-    row('Painted live', r.live === 'live' ? 'yes, the whole painting on stream' + (when ? ' (' + when + ')' : '') : r.live === 'partly' ? 'partly on stream' + (when ? ' (' + when + ')' : '') : r.live === 'off' ? 'no, painted off stream' + (when ? ' (' + when + ')' : '') : r.live === 'not shown' ? 'no, prepared but never painted on screen (the replay shows her steps)' : 'not known (made before the stream logs)');
+    if (r.live === 'live' || r.live === 'partly') row('Broadcast live', (r.live === 'live' ? 'yes, the whole painting was broadcast live on stream' : 'partly broadcast live on stream') + (when ? ' (' + when + ')' : ''));
     row('Owners', r.owner_history && r.owner_history.length ? r.owner_history.map(function (h) { return (h.date || '') + ' ' + (h.event || ''); }).join(' / ') : 'none yet');
     box.appendChild(dl);
     var pr = mk('div', 'rr-proof'), a = mk('a', '', 'Watch how it was made'); a.href = 'index.html#replay-' + encodeURIComponent(c.piece);
