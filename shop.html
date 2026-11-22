@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Quinn's Card Shop</title><meta name="description" content="Numbered pixel-art cards made live by Quinn, an AI pixel artist, in DECK FORGE. Every card has its own serial number and ID page.">
+<title>Pixel Relics - the card shop of Pixel Quinn</title><meta name="description" content="Pixel Relics: one-of-a-kind digital trading cards of pixel art, painted live by Pixel Quinn, an AI pixel artist. Every Pixel Relic has its own number and owner page, and can become a framed print.">
 <style>
 :root{--bg:#0d1020;--card:#171c36;--edge:#2b3366;--teal:#3fd6c1;--amber:#ffbf47;--fg:#e8ecff;--mut:#9aa3d6}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif;padding:16px max(16px,env(safe-area-inset-left))}
@@ -12,12 +12,13 @@ main{max-width:980px;margin:0 auto}h1{font-size:28px;margin:8px 0}a{color:var(--
 .c img{width:100%;aspect-ratio:2/3;display:block;border-radius:6px;background:#111}
 .c .s{font:12px/1.3 ui-monospace,monospace;color:var(--mut);margin-top:6px}.c .t{font-weight:600;font-size:14px}.c .p{color:var(--amber);font-size:13px}.c .o{color:var(--teal);font-size:13px}
 select{background:var(--card);color:var(--fg);border:2px solid var(--edge);border-radius:6px;padding:6px}
-</style></head><body><main>
-<div class="top"><h1>QUINN'S CARD SHOP</h1><a href="index.html">Back to Quinn's workshop</a></div>
-<p><b style="color:var(--amber)">Every picture is one of a kind.</b> When a card is sold it shows as SOLD, and that picture can never be sold or printed again. Only its owner can order a framed print of it, now or later.</p>
-<p>Every picture Quinn makes live in DECK FORGE becomes a numbered card. One card, one serial number, one ID page that shows who owns it.</p>
-<div class="how"><b>How it works.</b> Pick a card. Prices go by size: 16 x 16 <span id="p16"></span>, 32 x 32 <span id="p32"></span>, 64 x 64 <span id="p64"></span>, 128 x 128 <span id="p128"></span> (dollars). Open a card and press Get this card: you pay in a secure checkout (cards and Google Pay), type the name you want on the card, and get a licence key. Paste it on the claim page to download your card file; your name appears on the card's ID page at once. Want it on your wall? Every card can also come as a framed print (30 x 30 cm). Sold or traded your card later? Tell us, and the owner on the ID page changes; the fee for that is <span id="fee">20</span>% of the sale price.</div>
-<label>Show <select id="f"><option value="for sale">cards for sale</option><option value="reserved">cards reserved for the viewer who asked for them</option><option value="owned">cards that have an owner</option><option value="">all cards</option></select></label>
+</style><link rel="stylesheet" href="relics.css"></head><body><main>
+<div class="top"><h1>PIXEL RELICS</h1><a href="index.html">Back to Quinn's workshop</a></div>
+<p class="relics-sub">The card shop of Pixel Quinn</p>
+<div class="how hero"><b>What is a Pixel Relic?</b> A one-of-a-kind digital trading card with a pixel picture painted live by Pixel Quinn. Every Pixel Relic has its own number and its own colour, and there is only one of each: when a Relic is sold it shows as SOLD and can never be sold or printed again. You own it, your name goes on its page, and only you can order a framed print of it, now or later.</div>
+
+<div class="how"><b>How it works.</b> Pick a Relic. Prices go by size: 16 x 16 <span id="p16"></span>, 32 x 32 <span id="p32"></span>, 64 x 64 <span id="p64"></span>, 128 x 128 <span id="p128"></span> (dollars). Open a card and press Get this Pixel Relic: you pay in a secure checkout (cards and Google Pay), type the name you want on the card, and get a licence key. Paste it on the claim page to download your Pixel Relic; your name appears on its page at once. Want it on your wall? Every Relic can also come as a framed print (30 x 30 cm). Sold or traded your Relic later? Tell us, and the owner on the ID page changes; the fee for that is <span id="fee">20</span>% of the sale price.</div>
+<label>Show <select id="f"><option value="for sale">Relics for sale</option><option value="reserved">Relics reserved for the viewer who asked for them</option><option value="owned">Relics that have an owner</option><option value="">all Relics</option></select></label>
 <div id="grid"></div></main>
 <script src="pieces.js"></script><script src="cards.js?v=20261122b"></script>
 <script>

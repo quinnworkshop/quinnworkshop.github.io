@@ -24,24 +24,24 @@ function buyBox(b, r, c, k) {
   var rq = !!k, base = rq ? SHOP.request : SHOP.digital[c.size], BUNDLE = rq ? SHOP.requestprint : SHOP.bundle, DPRICE = rq ? r.request_price : priceOf(r, c), KX = rq ? '&k=' + k : '';
   if (!base) {
     b.innerHTML = '';
-    b.appendChild(el('b', '', 'Get this card for ' + money(DPRICE) + '.'));
+    b.appendChild(el('b', '', 'Get this Pixel Relic for ' + money(DPRICE) + '.'));
     var ul = el('ul'); ['Pay on the tip page.', 'In the message write ' + c.serial + ' and your name.', "Quinn's studio then sends you the full card file and puts your name here as the owner."].forEach(function (t) { ul.appendChild(el('li', '', t)); }); b.appendChild(ul);
-    var pp = el('p'); var tl = el('a', 'btn', 'Get this card'); tl.href = TIP; tl.target = '_blank'; tl.rel = 'noopener'; pp.appendChild(tl); b.appendChild(pp); return;
+    var pp = el('p'); var tl = el('a', 'btn', 'Get this Pixel Relic'); tl.href = TIP; tl.target = '_blank'; tl.rel = 'noopener'; pp.appendChild(tl); b.appendChild(pp); return;
   }
   var frame = 'black', pf = 0, pc = pieceOf(c.piece);
   b.innerHTML = '';
-  b.appendChild(el('b', '', 'Get this card'));
-  b.appendChild(el('p', '', 'Pay in the secure checkout (Google Pay and cards work). Type the name you want shown as the owner. After paying you download your card file and your name appears on this page.'));
-  var d = el('p'); var a1 = el('a', 'btn', 'Digital card: ' + money(DPRICE)); a1.href = link(base, c.serial, KX); d.appendChild(a1); b.appendChild(d);
+  b.appendChild(el('b', '', 'Get this Pixel Relic'));
+  b.appendChild(el('p', '', 'Pay in the secure checkout (Google Pay and cards work). Type the name you want shown as the owner. After paying you download your Pixel Relic and your name appears on this page.'));
+  var d = el('p'); var a1 = el('a', 'btn', 'Digital Relic: ' + money(DPRICE)); a1.href = link(base, c.serial, KX); d.appendChild(a1); b.appendChild(d);
   if (BUNDLE) {
-    b.appendChild(el('p', '', 'Or get the card AND a framed print (30 x 30 cm, ready to hang, shipped to you): ' + money(BUNDLE_PRICE) + ', the same for every size.'));
+    b.appendChild(el('p', '', 'Or get the Pixel Relic AND a framed print (30 x 30 cm, ready to hang, shipped to you): ' + money(BUNDLE_PRICE) + ', the same for every size.'));
     var wall = el('div', 'wall'), fr = el('div', 'fr ' + frame), cv = el('canvas'); fr.appendChild(cv); wall.appendChild(fr); b.appendChild(wall);
    // same look as the approved frame preview (reportrame-preview.html)
     function still() { var one = { size: pc.size, pal: pc.pal, thumb: [pc.thumb[pf]], ms: 0 }; drawer(cv, one); }
     still();
     if (pc.thumb.length > 1) { b.appendChild(el('p', '', 'This card is an animation. Pick the frame that will be printed:')); var strip = el('div', 'strip');
       pc.thumb.forEach(function (_, i) { var t = el('canvas'); t.setAttribute('role', 'button'); t.tabIndex = 0; drawer(t, { size: pc.size, pal: pc.pal, thumb: [pc.thumb[i]], ms: 0 }); t.onclick = function () { pf = i; [].forEach.call(strip.children, function (x, k) { x.className = k === i ? 'on' : ''; }); still(); setLink(); }; if (i === 0) t.className = 'on'; strip.appendChild(t); }); b.appendChild(strip); }
-    var row = el('div', 'frames'); var a2 = el('a', 'btn', 'Card + framed print: ' + money(BUNDLE_PRICE));
+    var row = el('div', 'frames'); var a2 = el('a', 'btn', 'Relic + framed print: ' + money(BUNDLE_PRICE));
     function setLink() { a2.href = link(BUNDLE, c.serial, KX + '&frame=' + frame + '&pf=' + pf); fr.className = 'fr ' + frame; }
     FRAMES.forEach(function (f) { var bt = el('button', '', f[1]); bt.type = 'button'; bt.setAttribute('aria-pressed', f[0] === frame ? 'true' : 'false'); bt.onclick = function () { frame = f[0]; [].forEach.call(row.children, function (x) { x.setAttribute('aria-pressed', x === bt ? 'true' : 'false'); }); setLink(); }; row.appendChild(bt); });
     b.appendChild(row); setLink(); var d2 = el('p'); d2.appendChild(a2); b.appendChild(d2);

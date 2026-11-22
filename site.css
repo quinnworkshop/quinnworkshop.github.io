@@ -57,3 +57,43 @@ aside{display:flex;flex-direction:column;gap:12px;min-height:0;overflow:auto}
 
 .seo-about.open #aboutx{grid-column:1/-1;justify-self:end;height:auto;align-self:start}.seo-about.open p{font-size:14px}.seo-about.open h2{font-size:15px}.seo-about.open h3{font-size:14px}
 #buycard h2{color:var(--amber)}.buyline{font-size:14px;line-height:1.45;margin:0 0 10px;color:var(--white)}#buybtn{display:inline-block;background:var(--amber);color:#1c1238;font-weight:800;letter-spacing:1px;text-decoration:none;border-radius:6px;padding:8px 16px}#buybtn:hover{filter:brightness(1.1)}.buynote{font-size:12px;color:var(--soft);margin:8px 0 0}
+
+/* 22 Nov 2026 (Sam, urgent): REAL MOBILE VERSION: phones in portrait AND landscape, tablets. Desktop (wider than 900 px) is untouched. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (max-width:900px){
+  html,body{height:auto}
+  body{display:block;min-height:100vh;overflow-x:hidden}
+  header{flex-wrap:wrap;gap:4px 12px;padding:8px 12px;align-items:center}
+  header h1{font-size:19px;flex:1 1 100%;margin:0}
+  header>span{display:none}
+  header a{font-size:14px;min-height:44px;display:inline-flex;align-items:center;padding:0 4px}
+  #aboutbtn,#vbtn{min-height:44px;font-size:13px}
+  #vbtn{margin-left:auto}
+  main{grid-template-columns:minmax(0,1fr);padding:8px;gap:10px}
+  #shop{min-height:0;height:min(88vw,62vh)}
+  aside{overflow:visible}
+  #who{flex-direction:column;align-items:stretch}
+  #face{width:min(100%,300px);height:auto;aspect-ratio:1;margin:0 auto}
+  #say{min-height:72px;font-size:17px}
+  #gal{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #gal button{min-height:76px;font-size:13px}
+  .seo-about.open{inset:2%;padding:14px}
+  #aboutx,#popx{min-height:44px;min-width:70px}
+  .carts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lib{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  #tip{display:none!important}
+  #qpromo{left:10px!important;bottom:10px!important;max-width:calc(100vw - 20px)!important}
+}
+@media (max-width:900px) and (orientation:landscape) and (max-height:560px){
+  body{display:grid;grid-template-rows:auto 1fr;height:100vh;overflow:hidden}
+  header{padding:4px 10px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;gap:10px}
+  header h1{flex:none;font-size:16px}
+  header a{min-height:40px}
+  #aboutbtn,#vbtn{min-height:40px}
+  main{grid-template-columns:minmax(0,1fr) minmax(250px,310px);height:100%;min-height:0;padding:6px;gap:8px}
+  #shop{height:100%;min-height:0}
+  aside{overflow:auto;height:100%;min-height:0}
+  #who{flex-direction:row;align-items:center}
+  #face{width:min(46%,150px)}
+  #say{min-height:0;font-size:15px}
+}
