@@ -162,22 +162,14 @@
   }
   // 19 Nov 2026 (Sam): selling step 1. A requested painting can be bought by the person who asked for it, for 5 dollars, during
   // the first 7 days (PayPal.me; Sam checks the buyer's name). After that: auction (coming soon). Every piece is one of a kind.
-  var PAYPAL = 'https://paypal.me/samwalcarius/5USD';
-  function buyPanel(p) {
+  function buyPanel(p) {   // 22 Nov 2026 (Sam): no PayPal, no auction any more: a requested piece is a Pixel Relic in the card shop
     var card = $('buycard'), box = $('buy'); if (!card || !box) return;
-    var r = p && p.requested_by; if (!r || !r.at) { card.hidden = true; return; }
-    var t0 = new Date(r.at.replace(' ', 'T')), until = new Date(t0.getTime() + 7 * 864e5), open = Date.now() < until.getTime();
-    var day = until.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    var r = p && p.requested_by; if (!r || !r.name) { card.hidden = true; return; }
     box.innerHTML = ''; card.hidden = false;
     var who = document.createElement('p'); who.className = 'buyline';
-    who.textContent = open ? ('Requested by ' + r.name + ' on ' + (r.platform || 'stream') + '. Reserved for ' + r.name + ' until ' + day + '.')
-                           : ('Requested by ' + r.name + '. The 7 days are over: this one-of-a-kind piece goes to auction (coming soon).');
-    box.appendChild(who);
-    if (open) {
-      var a = document.createElement('a'); a.id = 'buybtn'; a.href = PAYPAL; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'BUY FOR 5 DOLLARS';
-      var n = document.createElement('p'); n.className = 'buynote'; n.textContent = 'Only for ' + r.name + '. In the PayPal note, write the painting\u2019s name: \u201C' + (p.title || '') + '\u201D and your ' + (r.platform || '') + ' name. After paying you receive your painting by email: a full-size picture file, yours to keep, and the email lets you download it again any time.';
-      box.appendChild(a); box.appendChild(n);
-    }
+    who.textContent = 'Requested by ' + r.name + '. This one-of-a-kind piece is a Pixel Relic, waiting for ' + r.name + ' in the card shop.';
+    var a = document.createElement('a'); a.id = 'buybtn'; a.href = 'shop.html'; a.textContent = 'OPEN THE PIXEL RELIC SHOP';
+    box.appendChild(who); box.appendChild(a);
   }  async function play(i) {
     var p = PIECES[i], id = ++run;
     window.__replayOn = false;
