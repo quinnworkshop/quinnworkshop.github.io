@@ -9,6 +9,7 @@ main{max-width:980px;margin:0 auto}h1{font-size:28px;margin:8px 0}a{color:var(--
 #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:12px}
 .c{background:var(--card);border:2px solid var(--edge);border-radius:10px;padding:8px;text-decoration:none;color:var(--fg);display:block}.c:hover,.c:focus-visible{border-color:var(--teal);outline:none}
 .c canvas{width:100%;aspect-ratio:1;image-rendering:pixelated;display:block;background:#000;border-radius:6px}
+.c img{width:100%;aspect-ratio:2/3;display:block;border-radius:6px;background:#111}
 .c .s{font:12px/1.3 ui-monospace,monospace;color:var(--mut);margin-top:6px}.c .t{font-weight:600;font-size:14px}.c .p{color:var(--amber);font-size:13px}.c .o{color:var(--teal);font-size:13px}
 select{background:var(--card);color:var(--fg);border:2px solid var(--edge);border-radius:6px;padding:6px}
 </style></head><body><main>
@@ -23,7 +24,7 @@ select{background:var(--card);color:var(--fg);border:2px solid var(--edge);borde
 var REG = null;
 function show() { var g = document.getElementById('grid'), f = document.getElementById('f').value; g.innerHTML = '';
   REG.cards.slice().reverse().forEach(function (c) { if (f && c.status !== f) return; var p = pieceOf(c.piece); if (!p) return;
-    var a = el('a', 'c'); a.href = 'card.html?c=' + c.serial; var cv = el('canvas'); a.appendChild(cv); drawer(cv, p);
+    var a = el('a', 'c'); a.href = 'card.html?c=' + c.serial; var im = el('img'); im.src = 'cardimg/' + c.serial + '.png'; im.alt = c.title; im.loading = 'lazy'; im.onerror = function () { var cv = el('canvas'); im.replaceWith(cv); drawer(cv, p); }; a.appendChild(im);
     a.appendChild(el('div', 't', c.title)); a.appendChild(el('div', 's', c.serial + ' · ' + c.size + 'x' + c.size + (c.frames > 1 ? ' · ' + c.frames + ' frames' : '')));
     a.appendChild(c.owner ? el('div', 'o', 'SOLD · owner: ' + c.owner) : c.status === 'reserved' ? el('div', 'o', 'Reserved for the viewer who asked for it') : el('div', 'p', money(priceOf(REG, c)))); g.appendChild(a); }); }
 loadCards(function (r) { if (!r) { document.getElementById('grid').textContent = 'The shop could not load. Please try again in a moment.'; return; }

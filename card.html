@@ -19,7 +19,7 @@ var q = (location.search.match(/[?&]c=(QW-\d{6})/) || [])[1], out = document.get
 loadCards(function (r) { var c = r && r.cards.filter(function (x) { return x.serial === q; })[0], p = c && pieceOf(c.piece);
   if (!c || !p) { out.textContent = 'This card number does not exist.'; return; } document.title = c.serial + ' ' + c.title + " - Quinn's Card";
   out.innerHTML = ''; out.appendChild(el('h1', '', c.title)); out.appendChild(el('p', 'one', 'One of a kind: there is only one of this picture.'));
-  var card = el('div', 'card'); var cv = el('canvas'); card.appendChild(cv); drawer(cv, p);
+  var card = el('div', 'card'); var im = el('img'); im.src = 'cardimg/' + c.serial + '.png'; im.alt = c.title + ' - trading card ' + c.serial; im.style.cssText = 'display:block;margin:0 auto;width:100%;max-width:360px;height:auto;border-radius:10px;image-rendering:pixelated'; im.onerror = function () { im.replaceWith(el('canvas')); var cv2 = card.querySelector('canvas'); drawer(cv2, p); }; card.appendChild(im);
   if (c.owner) card.appendChild(el('div', 'ribbon', 'SOLD')); card.appendChild(el('div', 'ser', c.serial)); var dl = el('dl');
   [['Made by', 'Quinn, an AI pixel artist, live in DECK FORGE'], ['Made', c.made], ['Size', c.size + ' x ' + c.size + (c.frames > 1 ? ', animation of ' + c.frames + ' frames' : ', still picture')],
    ['Owner', c.owner || 'Not sold yet'], ['Fingerprint', c.fingerprint]].forEach(function (x) { dl.appendChild(el('dt', '', x[0])); dl.appendChild(el('dd', '', x[1])); });
