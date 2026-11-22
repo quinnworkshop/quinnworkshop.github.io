@@ -25,7 +25,7 @@ loadCards(function (r) { var c = r && r.cards.filter(function (x) { return x.ser
    ['Owner', c.owner || 'Not sold yet'], ['Fingerprint', c.fingerprint]].forEach(function (x) { dl.appendChild(el('dt', '', x[0])); dl.appendChild(el('dd', '', x[1])); });
   card.appendChild(dl); out.appendChild(card);
   var b = el('div', 'box');
-  var K = (location.search.match(/[?&]k=([0-9a-f]{12})/) || [])[1];
+  var K = (location.search.match(/[?&]k=([0-9a-f]{24})/) || [])[1];
   if (!c.owner && c.status === 'reserved' && K) { buyBox(b, r, c, K); }
   else if (!c.owner && c.status === 'reserved') { b.innerHTML = '<b>This card was made on request.</b><p>It is reserved for the viewer who asked for it, at ' + money(r.request_price) + '. If nobody claims it, it may be put on sale later.</p><p>Did you ask for this picture? Quinn gives you your personal link on stream. With it you can get the card, and also choose a framed print of it.</p>'; }
   else if (!c.owner) { buyBox(b, r, c); }
