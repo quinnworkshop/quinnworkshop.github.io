@@ -4,11 +4,22 @@ main{max-width:620px;margin:0 auto}a{color:var(--teal)}.btn{display:inline-block
 <body><main><h1>Download your card</h1><div class="box"><p>Paste the licence key from your receipt (Gumroad shows it after you pay).</p><input id="k" placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX" autocomplete="off"><button class="btn" id="go" type="button">Get my card</button></div><div class="box" id="out" hidden></div><p><a href="shop.html">Back to the card shop</a></p></main>
 <script src="cards.js?v=20261122b"></script><script>
 var out = document.getElementById('out');
+function addLater(d) {
+  var box = document.createElement('div'); box.className = 'box'; var frame = 'black', pf = 0;
+  box.innerHTML = '<b>Add a framed print</b><p>You did not order the print with your card, and you still can: a framed print of your picture, 30 x 30 cm, ready to hang, shipped to you, ' + LATER_PRICE + ' dollars. There is only one of this picture, so only you can order it, and only once.</p>';
+  var row = document.createElement('p'); var sel = document.createElement('select'); sel.setAttribute('aria-label', 'Frame colour');
+  [['white', 'White'], ['wood', 'Wood'], ['dark', 'Dark wood'], ['black', 'Black']].forEach(function (f) { var o = document.createElement('option'); o.value = f[0]; o.textContent = f[1] + ' frame'; if (f[0] === 'black') o.selected = true; sel.appendChild(o); });
+  row.appendChild(sel); var fsel = null;
+  if (d.frames > 1) { fsel = document.createElement('select'); fsel.setAttribute('aria-label', 'Frame to print'); for (var i = 0; i < d.frames; i++) { var o2 = document.createElement('option'); o2.value = i; o2.textContent = 'Print frame ' + (i + 1) + ' of ' + d.frames; fsel.appendChild(o2); } row.appendChild(document.createTextNode(' ')); row.appendChild(fsel); }
+  box.appendChild(row); var a = document.createElement('a'); a.className = 'btn'; a.textContent = 'Order my framed print: ' + LATER_PRICE + ' dollars'; box.appendChild(a);
+  function upd() { a.href = SHOP.printlater + '?card=' + d.serial + '&frame=' + sel.value + '&pf=' + (fsel ? fsel.value : 0) + '&t=' + d.later; } sel.onchange = upd; if (fsel) fsel.onchange = upd; upd();
+  out.appendChild(box);
+}
 function claim(qs) { out.hidden = false; out.textContent = 'Checking...';
   if (!API) { out.textContent = 'The shop is not connected yet.'; return; }
   fetch(API + '/api/claim?' + qs).then(function (r) { return r.json(); }).then(function (d) {
     if (!d.ok) { out.textContent = 'We could not find that purchase. Check the key, or ask the studio on stream.'; return; }
-    out.innerHTML = '<b>' + d.serial + ' ' + d.title.replace(/[<>&]/g, '') + '</b> is yours, ' + d.owner.replace(/[<>&]/g, '') + '.<p><a class="btn" href="' + d.file + '">Download your card</a></p>' + (d.bundle ? '<p>Your framed print is on its way.</p>' : '') + '<p>Keep the file: it has the serial number inside. Your card page: <a href="card.html?c=' + d.serial + '">' + d.serial + '</a></p>'; }).catch(function () { out.textContent = 'Could not reach the shop. Try again in a minute; your purchase is safe.'; }); }
+    out.innerHTML = '<b>' + d.serial + ' ' + d.title.replace(/[<>&]/g, '') + '</b> is yours, ' + d.owner.replace(/[<>&]/g, '') + '.<p><a class="btn" href="' + d.file + '">Download your card</a></p>' + (d.bundle ? '<p>Your framed print is ordered.</p>' : '') + '<p>Keep the file: it has the serial number inside. Your card page: <a href="card.html?c=' + d.serial + '">' + d.serial + '</a></p>'; if (!d.bundle && d.later) addLater(d); }).catch(function () { out.textContent = 'Could not reach the shop. Try again in a minute; your purchase is safe.'; }); }
 document.getElementById('go').onclick = function () { var k = document.getElementById('k').value.trim(); if (k) claim('key=' + encodeURIComponent(k)); };
 var q = (location.search.match(/[?&]sale_id=([^&]+)/) || [])[1]; if (q) claim('sale=' + q);
 </script></body></html>

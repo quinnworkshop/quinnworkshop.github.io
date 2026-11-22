@@ -4,7 +4,7 @@
 :root{--bg:#0d1020;--card:#171c36;--edge:#2b3366;--teal:#3fd6c1;--amber:#ffbf47;--fg:#e8ecff;--mut:#9aa3d6}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif;padding:16px max(16px,env(safe-area-inset-left))}
 main{max-width:720px;margin:0 auto}a{color:var(--teal)}h1{font-size:26px;margin:6px 0 2px}
-.card{background:var(--card);border:3px solid var(--teal);border-radius:14px;padding:14px;margin:12px 0}
+.one{color:var(--amber);font-weight:600;margin:2px 0 6px}.ribbon{position:absolute;top:16px;right:-4px;background:#c0392b;color:#fff;font:700 15px system-ui;letter-spacing:.14em;padding:5px 16px;border-radius:4px 0 0 4px;box-shadow:0 2px 6px rgba(0,0,0,.4)}.card{position:relative}.card{background:var(--card);border:3px solid var(--teal);border-radius:14px;padding:14px;margin:12px 0}
 .card canvas{width:100%;max-width:480px;aspect-ratio:1;image-rendering:pixelated;display:block;margin:0 auto;background:#000;border-radius:6px}
 .ser{font:700 22px ui-monospace,monospace;color:var(--amber);letter-spacing:.08em}
 dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:10px 0}dt{color:var(--mut)}dd{margin:0;word-break:break-all}
@@ -18,16 +18,18 @@ ul{padding-left:20px;margin:6px 0}.wall{background:#d9d3ca;border-radius:12px;pa
 var q = (location.search.match(/[?&]c=(QW-\d{6})/) || [])[1], out = document.getElementById('out');
 loadCards(function (r) { var c = r && r.cards.filter(function (x) { return x.serial === q; })[0], p = c && pieceOf(c.piece);
   if (!c || !p) { out.textContent = 'This card number does not exist.'; return; } document.title = c.serial + ' ' + c.title + " - Quinn's Card";
-  out.innerHTML = ''; out.appendChild(el('h1', '', c.title));
+  out.innerHTML = ''; out.appendChild(el('h1', '', c.title)); out.appendChild(el('p', 'one', 'One of a kind: there is only one of this picture.'));
   var card = el('div', 'card'); var cv = el('canvas'); card.appendChild(cv); drawer(cv, p);
-  card.appendChild(el('div', 'ser', c.serial)); var dl = el('dl');
+  if (c.owner) card.appendChild(el('div', 'ribbon', 'SOLD')); card.appendChild(el('div', 'ser', c.serial)); var dl = el('dl');
   [['Made by', 'Quinn, an AI pixel artist, live in DECK FORGE'], ['Made', c.made], ['Size', c.size + ' x ' + c.size + (c.frames > 1 ? ', animation of ' + c.frames + ' frames' : ', still picture')],
    ['Owner', c.owner || 'Not sold yet'], ['Fingerprint', c.fingerprint]].forEach(function (x) { dl.appendChild(el('dt', '', x[0])); dl.appendChild(el('dd', '', x[1])); });
   card.appendChild(dl); out.appendChild(card);
   var b = el('div', 'box');
-  if (!c.owner && c.status === 'reserved') { b.innerHTML = '<b>This card was made on request.</b><p>It is reserved for the viewer who asked for it, at ' + money(r.request_price) + '. If nobody claims it, it may be put on sale later.</p>'; }
+  var K = (location.search.match(/[?&]k=([0-9a-f]{12})/) || [])[1];
+  if (!c.owner && c.status === 'reserved' && K) { buyBox(b, r, c, K); }
+  else if (!c.owner && c.status === 'reserved') { b.innerHTML = '<b>This card was made on request.</b><p>It is reserved for the viewer who asked for it, at ' + money(r.request_price) + '. If nobody claims it, it may be put on sale later.</p><p>Did you ask for this picture? Quinn gives you your personal link on stream. With it you can get the card, and also choose a framed print of it.</p>'; }
   else if (!c.owner) { buyBox(b, r, c); }
-  else { b.innerHTML = '<b>This card belongs to ' + c.owner.replace(/[<>&]/g, '') + '.</b><p>Selling or trading it? Tell us the new owner and the price. The register is changed and a fee of ' + r.fee_percent + '% of the sale price is paid to the studio. A card whose new owner is not in the register counts as owner unconfirmed.</p>'; }
+  else { b.innerHTML = '<b>Sold. This picture belongs to ' + c.owner.replace(/[<>&]/g, '') + '.</b><p>It is one of a kind: it can not be bought again, and nobody else can order a print of it.</p><p>Are you the owner and did you not print it yet? You can still order your framed print, 30 x 30 cm: <a href="claim.html">paste your licence key on the claim page</a> and choose Add a framed print.</p><p>Selling or trading it? Tell us the new owner and the price. The register is changed and a fee of ' + r.fee_percent + '% of the sale price is paid to the studio. A card whose new owner is not in the register counts as owner unconfirmed.</p>'; }
   out.appendChild(b);
   var h = el('div', 'box'); h.appendChild(el('b', '', 'History')); var ul = el('ul');
   c.history.forEach(function (e) { ul.appendChild(el('li', '', e.date + ': ' + e.event + (e.price ? ' (' + e.price + ' dollars)' : ''))); }); h.appendChild(ul); out.appendChild(h);
