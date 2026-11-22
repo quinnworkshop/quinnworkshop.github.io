@@ -39,6 +39,8 @@ function doneCanvas() {
   c.style.width = cv.style.width; c.style.height = cv.style.height; c.style.display = 'block';
   return c;
 }
+// 22 Nov 2026 (Sam): the finished/partial picture must follow the screen while the camera glides in (centred and zoomed in), not keep the size it had when it was made
+requestAnimationFrame(function syncDonePic() { const c = document.getElementById('donePic'); if (c && c.style.display !== 'none') { c.style.width = cv.style.width; c.style.height = cv.style.height; } requestAnimationFrame(syncDonePic); });
 const room = {
   start() { DeckRoom.start(rc, 'room', 'kid'); },
   look(to) { DeckKid.go(to); },

@@ -216,9 +216,9 @@ const DeckKid = (() => {
   // ---------- the camera (Sam: come into the room wide, the three-quarter view to play, a frontal one, a full frame) ----------
   function setTurn(s) { QUAD = mixQ(Q34, QFR, s); GLASSOUT = mixQ(G34, GFR, s); FRONT = mixQ(F34, FFR, s); DEPTH = [D34[0] + (DFR[0] - D34[0]) * s, D34[1] + (DFR[1] - D34[1]) * s];
     QC = [(QUAD[0][0] + QUAD[2][0]) / 2, (QUAD[0][1] + QUAD[2][1]) / 2]; CTL.forEach(c => { if (c.kind === 'btn' && c.id !== 'view') c.cy = chinY(c.cx); }); }
-  let fullFar = 2, roomFar = .58, roomCx = 795;
-  const ROOM_ZOOM = 1.15, SWITCH_EDGE = 1320;   // 22 Nov 2026 (Sam): the room zoomed in more, both upright and sideways, the view always ends just behind the light switch (switch at cx 1300, r 12) so it is fully visible at the border
-  const VIEWS = { wide: { far: .4, cx: 800, cy: 470, turn: 0 }, room: { get far() { return roomFar; }, get cx() { return roomCx; }, cy: 390, turn: 0 }, front: { far: .85, cx: 775, cy: 430, turn: 1 }, full: { get far() { return fullFar; }, cx: 775, cy: 418, turn: 1 } };
+  let fullFar = 2, roomFar = .58, roomCx = 780, roomCy = 390;
+  const MON_CX = 780, SWITCH_EDGE = 1320;   // 22 Nov 2026 (Sam): the room zoomed in more, both upright and sideways, the view always ends just behind the light switch (switch at cx 1300, r 12) so it is fully visible at the border
+  const VIEWS = { wide: { far: .4, cx: 800, cy: 470, turn: 0 }, room: { get far() { return roomFar; }, get cx() { return roomCx; }, get cy() { return roomCy; }, turn: 0 }, front: { far: .85, cx: 775, cy: 430, turn: 1 }, full: { get far() { return fullFar; }, cx: 775, cy: 418, turn: 1 } };
   const ORDER = ['room', 'front', 'full', 'wide'];
   let cam = { far: .58, cx: 775, cy: 440, turn: 0 }, from = null, to = null, step = 0, N = 14, view = 'room';
   const ease = s => s < .5 ? 2 * s * s : 1 - (-2 * s + 2) ** 2 / 2;
@@ -227,7 +227,10 @@ const DeckKid = (() => {
   function enter() { cam = { ...VIEWS.wide }; view = 'wide'; setTurn(0); go('room', 28); }   // walking in: wide, then gliding to the desk
   function tick() { if (!to) return false; step++; const e = ease(Math.min(1, step / N)); cam = { far: from.far + (to.far - from.far) * e, cx: from.cx + (to.cx - from.cx) * e, cy: from.cy + (to.cy - from.cy) * e, turn: from.turn + (to.turn - from.turn) * e }; setTurn(cam.turn); if (step >= N) to = null; return true; }
   function setFull(v) { fullFar = v; }
-  function fitRoom(w, h, baseS) { const Sf = Math.min(w / 1075, h / 740) * ROOM_ZOOM; roomFar = Math.max(.34, Sf / Math.max(baseS, .01)); roomCx = Math.max(600, Math.min(900, SWITCH_EDGE - w / (2 * Sf))); if (view === 'room') { if (to) { to.far = roomFar; to.cx = roomCx; } else { cam.far = roomFar; cam.cx = roomCx; } } }
+  function fitRoom(w, h, baseS) {   // 22 Nov (Sam): the MONITOR centred, zoomed in as far as still shows the light switch fully at the right border (width decides, so upright and sideways work the same)
+    const Sf = w / (2 * (SWITCH_EDGE - MON_CX));
+    roomFar = Math.max(.34, Sf / Math.max(baseS, .01)); roomCx = MON_CX; roomCy = Math.max(390, Math.min(470, h / (2 * Sf)));
+    if (view === 'room') { if (to) { to.far = roomFar; to.cx = roomCx; to.cy = roomCy; } else { cam.far = roomFar; cam.cx = roomCx; cam.cy = roomCy; } } }
   function fullness() { const f0 = Math.max(.85, roomFar + .03); return Math.max(0, Math.min(1, (cam.far - f0) / Math.max(.01, fullFar - f0))); }   // 0 in the room, 1 in the full frame
   // version 110 (Sam): the main light can be switched off; the arcade, the fish tank, the lava lamp, the fairy lights,
   // the neon sign and the monitor stay lit (they are drawn as lights on top). Kept on this computer.

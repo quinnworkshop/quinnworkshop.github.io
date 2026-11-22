@@ -44,7 +44,7 @@
     if (window.QuinnLive && QuinnLive.mode) QuinnLive.mode(mode);
   }
   function look(to) {
-    try { frame.contentWindow.ROOM.look(to === 'front' ? 'front' : 'room'); } catch (e) {}
+    try { frame.contentWindow.ROOM.look(to === 'front' ? 'full' : 'room'); } catch (e) {}   // 22 Nov (Sam): while she paints or shows a painting the screen is centred and zoomed in (the full frame), not the middle zoom
   }
   PIECES.forEach(function (p, i) {
     var b = document.createElement('button'), c = document.createElement('canvas'), k = 0;
