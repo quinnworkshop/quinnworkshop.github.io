@@ -27,7 +27,7 @@ function show() { var g = document.getElementById('grid'), f = document.getEleme
   REG.cards.slice().reverse().forEach(function (c) { if (f && c.status !== f) return; var p = pieceOf(c.piece); if (!p) return;
     var a = el('a', 'c'); a.href = 'card.html?c=' + c.serial; var im = el('img'); im.src = 'cardimg/' + c.serial + '.png'; im.alt = c.title; im.loading = 'lazy'; im.onerror = function () { var cv = el('canvas'); im.replaceWith(cv); drawer(cv, p); }; a.appendChild(im);
     a.appendChild(el('div', 't', c.title)); a.appendChild(el('div', 's', c.serial + ' · ' + c.size + 'x' + c.size + (c.frames > 1 ? ' · ' + c.frames + ' frames' : '')));
-    a.appendChild(c.owner ? el('div', 'o', 'SOLD · owner: ' + c.owner) : c.status === 'reserved' ? el('div', 'o', 'Reserved for the viewer who asked for it') : el('div', 'p', money(priceOf(REG, c)))); g.appendChild(a); }); }
+    a.appendChild(c.owner ? el('div', 'o', 'SOLD · owner: ' + c.owner) : c.status === 'paused' ? el('div', 'o', 'Being prepared, back on sale soon') : c.status === 'reserved' ? el('div', 'o', 'Reserved for the viewer who asked for it') : el('div', 'p', money(priceOf(REG, c)))); g.appendChild(a); }); }
 loadCards(function (r) { if (!r) { document.getElementById('grid').textContent = 'The shop could not load. Please try again in a moment.'; return; }
   REG = r; ['16','32','64','128'].forEach(function (k) { document.getElementById('p' + k).textContent = r.prices[k]; }); document.getElementById('fee').textContent = r.fee_percent; show(); });
 document.getElementById('f').onchange = function () { if (REG) show(); };

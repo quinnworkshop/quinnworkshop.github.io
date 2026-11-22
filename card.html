@@ -26,7 +26,8 @@ loadCards(function (r) { var c = r && r.cards.filter(function (x) { return x.ser
   card.appendChild(dl); out.appendChild(card);
   var b = el('div', 'box');
   var K = (location.search.match(/[?&]k=([0-9a-f]{24})/) || [])[1];
-  if (!c.owner && c.status === 'reserved' && K) { buyBox(b, r, c, K); }
+  if (!c.owner && c.status === 'paused') { b.innerHTML = '<b>Being prepared.</b><p>This card is being finished. It will be back on sale soon.</p>'; }   // 22 Nov 2026 (Sam): cards being remade are not for sale
+  else if (!c.owner && c.status === 'reserved' && K) { buyBox(b, r, c, K); }
   else if (!c.owner && c.status === 'reserved') { b.innerHTML = '<b>This card was made on request.</b><p>It is reserved for the viewer who asked for it, at ' + money(r.request_price) + '. If nobody claims it, it may be put on sale later.</p><p>Did you ask for this picture? Quinn gives you your personal link on stream. With it you can get the card, and also choose a framed print of it.</p>'; }
   else if (!c.owner) { buyBox(b, r, c); }
   else { b.innerHTML = '<b>Sold. This picture belongs to ' + c.owner.replace(/[<>&]/g, '') + '.</b><p>It is one of a kind: it can not be bought again, and nobody else can order a print of it.</p><p>Are you the owner and did you not print it yet? You can still order your framed print, 30 x 30 cm: <a href="claim.html">paste your licence key on the claim page</a> and choose Add a framed print.</p><p>Selling or trading it? Tell us the new owner and the price. The register is changed and a fee of ' + r.fee_percent + '% of the sale price is paid to the studio. A card whose new owner is not in the register counts as owner unconfirmed.</p>'; }

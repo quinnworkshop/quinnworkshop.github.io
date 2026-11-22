@@ -2272,14 +2272,15 @@
    "fingerprint": "cd964a3a1ff6f96590391394427d0555d9e29b9183aa05535e7d29e298ff43c0",
    "owner": "",
    "requested": true,
-   "status": "reserved",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "paused_was": "reserved"
   },
   {
    "serial": "QW-000120",
@@ -2292,14 +2293,15 @@
    "fingerprint": "3de85f594c12feeb134b0fcbf0a904a636b801b5c2b89ca07dfa84951549fe6b",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "blue"
+   "card_colour": "blue",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000121",
@@ -2312,14 +2314,15 @@
    "fingerprint": "100e4f397d65b65dae173f18304f32d15aded15ae0dc36c69e4633753e831fa6",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "magenta"
+   "card_colour": "magenta",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000122",
@@ -2332,14 +2335,15 @@
    "fingerprint": "76395281d0ad9f1af34207924e81edcbda9014668a3f67581179977516024f73",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "magenta"
+   "card_colour": "magenta",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000123",
@@ -2352,14 +2356,15 @@
    "fingerprint": "d3d2845de410c22c9ef481a85b56f2957f8dd2d7e71a3704d2ec6ba5c0cd0d8c",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000124",
@@ -2372,14 +2377,15 @@
    "fingerprint": "70de314bf4d1900603ff21d3220198373b20eb337811e6fb37b27abd373b3b81",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "teal"
+   "card_colour": "teal",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000125",
@@ -2392,14 +2398,15 @@
    "fingerprint": "e5a6f071d3e5b61e1b99a197559c76649a415d5f05f87f8b94e56ec9cf1d14e8",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000126",
@@ -2412,14 +2419,15 @@
    "fingerprint": "1667a31d5165a58d45a0fa88ff1f69713b807fd1f2093cd9d09ee261d85004f9",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "rose"
+   "card_colour": "rose",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000127",
@@ -2432,14 +2440,15 @@
    "fingerprint": "b11003fe0cb4604ab318312bd39063b90300fbaa1b66f6913f4365620a1ec57f",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "indigo"
+   "card_colour": "indigo",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000128",
@@ -2452,14 +2461,15 @@
    "fingerprint": "efdff49d762cddae11cd1bfcdbd1de436a9dc1ea4e40ac284fd779c9dcb58546",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "lime"
+   "card_colour": "lime",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000129",
@@ -2472,14 +2482,15 @@
    "fingerprint": "41a91ccc706319aaaaef6efff107a0cffc70dadd9e8fcd1cf2e69b161405ebde",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "grey"
+   "card_colour": "grey",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000130",
@@ -2492,14 +2503,15 @@
    "fingerprint": "d4cceea14cbcce39956915cf6ed51b45ef0789e92f12de4588fe0a838570b1f8",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "orange"
+   "card_colour": "orange",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000131",
@@ -2512,14 +2524,15 @@
    "fingerprint": "b3ff3393db17e037ad88df69d217c5d8e54ab99aac24ad9674a3a6afcd09985c",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "magenta"
+   "card_colour": "magenta",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000132",
@@ -2532,14 +2545,15 @@
    "fingerprint": "a628415710e07e4d6f60fa2d268469a09f6cd08b36ce7663d2063d78c2bba500",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "azure"
+   "card_colour": "azure",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000133",
@@ -2552,14 +2566,15 @@
    "fingerprint": "bccca67e3f516806148283be0dcc806671ea5bb0525ce4c665bfca903f31ff5c",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "rose"
+   "card_colour": "rose",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000134",
@@ -2572,14 +2587,15 @@
    "fingerprint": "477b9922971d81ffe94b50a0b8035eda8c1b387ebb407769f781d5f577d22a88",
    "owner": "",
    "requested": true,
-   "status": "reserved",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "orange"
+   "card_colour": "orange",
+   "paused_was": "reserved"
   },
   {
    "serial": "QW-000135",
@@ -2592,14 +2608,15 @@
    "fingerprint": "e1b112ac5c2916b92f37a1070db36eae4f3068c403b4358aa04de4bc36d9afb3",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000136",
@@ -2612,14 +2629,15 @@
    "fingerprint": "4a11aba8ab1b29ba3a010a1a91c9110f129678ad48bdae3376b3aedd0318227e",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "lime"
+   "card_colour": "lime",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000137",
@@ -2632,14 +2650,15 @@
    "fingerprint": "ea85f0b543f81049f7ca08eab55f9fd00098aed5c9406c0d6badb71c32bdb68f",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "magenta"
+   "card_colour": "magenta",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000138",
@@ -2652,14 +2671,15 @@
    "fingerprint": "ca46b903a837752d88d1d7543541dcdbe2d91adcb97b1df1295ead704548c71f",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "lime"
+   "card_colour": "lime",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000139",
@@ -2672,14 +2692,15 @@
    "fingerprint": "8a5613131360111232cebfe855b9edbf35522ec47fe78e9e34e293c3c21f960d",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "violet"
+   "card_colour": "violet",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000140",
@@ -2692,14 +2713,15 @@
    "fingerprint": "5f6bb0598bf1b20c2d35340a6ef3be4ad95ea461a9fb7e4866935181f7da1d9f",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "cyan"
+   "card_colour": "cyan",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000141",
@@ -2712,14 +2734,15 @@
    "fingerprint": "04e1b770d04adaf4119e629de310447360aa29d5be40af2508b1fc7e897f7b55",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "azure"
+   "card_colour": "azure",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000142",
@@ -2732,14 +2755,15 @@
    "fingerprint": "a91982c0b7cbb25d2c522d49b411c570cdd05a971c0a9bf24fe37fd8d4af0cf3",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000143",
@@ -2752,14 +2776,15 @@
    "fingerprint": "cc541e46984b14d58abedaacb364725261136acffdb0deb3496302e9ccadc70c",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "azure"
+   "card_colour": "azure",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000144",
@@ -2772,14 +2797,15 @@
    "fingerprint": "b0c3cb93e805467a50bda6f58c9b798427ea1bd8e6f7c2837c1b8fa8c5f0316a",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "crimson"
+   "card_colour": "crimson",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000145",
@@ -2792,14 +2818,15 @@
    "fingerprint": "4c9d90307fe46b6b3fbb3460a27be2f6065fcf310d797ebe0e8a863af95a5ec3",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "cyan"
+   "card_colour": "cyan",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000146",
@@ -2812,14 +2839,15 @@
    "fingerprint": "f17342289730b1cc1798a7131bc57913e152029ecd7f82a48e684dda235d5f98",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "violet"
+   "card_colour": "violet",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000147",
@@ -2832,14 +2860,15 @@
    "fingerprint": "b200269fc0ed320668ec2901307ad50b08b539a46551d2d2fcbe9b8dd0d5c2db",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "violet"
+   "card_colour": "violet",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000148",
@@ -2852,14 +2881,15 @@
    "fingerprint": "a9b7468c5007645e74f6d301233b9181e78dd61b3a60308fcb442706bfce2a73",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "indigo"
+   "card_colour": "indigo",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000149",
@@ -2872,14 +2902,15 @@
    "fingerprint": "24c721c719ee5a81dc4c95758f6805691f7d226b19bf3d3cedcfe85e4edd8a64",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "rose"
+   "card_colour": "rose",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000150",
@@ -2892,14 +2923,15 @@
    "fingerprint": "2425bc2d84459665f20b76953c140f3ba3803bc0fd431469f58edf118beb03d9",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "lime"
+   "card_colour": "lime",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000151",
@@ -2912,14 +2944,15 @@
    "fingerprint": "2f564aefed3e531cd7af15ca6cea7732797189c868d00691860ba0d5b1347e94",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "orange"
+   "card_colour": "orange",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000152",
@@ -2932,14 +2965,15 @@
    "fingerprint": "b637a0b212b4d7945902eba38cbe1d325df706f603e03407e042d8d6879c5987",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "orange"
+   "card_colour": "orange",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000153",
@@ -2952,14 +2986,15 @@
    "fingerprint": "0a795455585a8c9ce5af630860687b366ff038c58b8ab3071a882e0e560b5e25",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "emerald"
+   "card_colour": "emerald",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000154",
@@ -2972,14 +3007,15 @@
    "fingerprint": "d765831919e360a09fe06e2ca0489a130f917c5898670c6eed9800284bd96122",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "green"
+   "card_colour": "green",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000155",
@@ -2992,14 +3028,15 @@
    "fingerprint": "f86fdffa8bd2eb7ff63a62d2331703ebc16126e12c57840220b357bb6b8faf43",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "azure"
+   "card_colour": "azure",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000156",
@@ -3012,7 +3049,7 @@
    "fingerprint": "9643aa513924006cef6407b85e8d5c195113a7560e4ce380feaf8a06fb20f72f",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
@@ -3020,7 +3057,8 @@
     }
    ],
    "card_colour": "green",
-   "blurb": "Beneath candy-colored stars, a little mint arcade cabinet offers a quiet hello, saving a spark of joy for the next wanderer."
+   "blurb": "Beneath candy-colored stars, a little mint arcade cabinet offers a quiet hello, saving a spark of joy for the next wanderer.",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000157",
@@ -3033,14 +3071,15 @@
    "fingerprint": "2f1937f010119d18fd4ba934a16e60766f35a8d03418b1c8da1d2a126ab3c90d",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "grey"
+   "card_colour": "grey",
+   "paused_was": "for sale"
   },
   {
    "serial": "QW-000158",
@@ -3053,14 +3092,15 @@
    "fingerprint": "8e13e65a24f082833d955c30c366474902b4b9b000a747e80498215ca96af425",
    "owner": "",
    "requested": false,
-   "status": "for sale",
+   "status": "paused",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
     }
    ],
-   "card_colour": "green"
+   "card_colour": "green",
+   "paused_was": "for sale"
   }
  ],
  "prices": {
