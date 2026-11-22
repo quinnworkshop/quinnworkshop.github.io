@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quinn's Card</title>
+<style>
+:root{--bg:#0d1020;--card:#171c36;--edge:#2b3366;--teal:#3fd6c1;--amber:#ffbf47;--fg:#e8ecff;--mut:#9aa3d6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif;padding:16px max(16px,env(safe-area-inset-left))}
+main{max-width:720px;margin:0 auto}a{color:var(--teal)}h1{font-size:26px;margin:6px 0 2px}
+.card{background:var(--card);border:3px solid var(--teal);border-radius:14px;padding:14px;margin:12px 0}
+.card canvas{width:100%;max-width:480px;aspect-ratio:1;image-rendering:pixelated;display:block;margin:0 auto;background:#000;border-radius:6px}
+.ser{font:700 22px ui-monospace,monospace;color:var(--amber);letter-spacing:.08em}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:10px 0}dt{color:var(--mut)}dd{margin:0;word-break:break-all}
+.box{background:var(--card);border:2px solid var(--edge);border-radius:10px;padding:12px 16px;margin:12px 0}
+.btn{display:inline-block;background:var(--amber);color:#1a1300;font-weight:700;border-radius:8px;padding:10px 16px;text-decoration:none}
+ul{padding-left:20px;margin:6px 0}.fr{aspect-ratio:1;padding:7%;margin:8px 0;box-shadow:0 6px 12px rgba(0,0,0,.5)}.fr.white{background:#f3f2ee}.fr.wood{background:linear-gradient(135deg,#d3ae78,#bd9559)}.fr.dark{background:linear-gradient(135deg,#6a4629,#4a2f1b)}.fr.black{background:#161616}.fr canvas{width:100%;height:100%;display:block;image-rendering:pixelated;background:#000;border-radius:0;aspect-ratio:auto;max-width:none;margin:0}.strip{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}.strip canvas{width:56px;height:56px;image-rendering:pixelated;background:#000;border:2px solid var(--edge);border-radius:4px;cursor:pointer}.strip canvas.on{border-color:var(--amber)}.frames{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.frames button{font:inherit;padding:6px 12px;border-radius:8px;border:2px solid var(--edge);background:var(--card);color:var(--fg);cursor:pointer}.frames button[aria-pressed=true]{border-color:var(--teal)}code{background:#0a0d1c;padding:1px 6px;border-radius:4px}
+</style></head><body><main>
+<p><a href="shop.html">&larr; All cards</a></p><div id="out">Loading the card...</div></main>
+<script src="pieces.js"></script><script src="cards.js"></script>
+<script>
+var q = (location.search.match(/[?&]c=(QW-\d{6})/) || [])[1], out = document.getElementById('out');
+loadCards(function (r) { var c = r && r.cards.filter(function (x) { return x.serial === q; })[0], p = c && pieceOf(c.piece);
+  if (!c || !p) { out.textContent = 'This card number does not exist.'; return; } document.title = c.serial + ' ' + c.title + " - Quinn's Card";
+  out.innerHTML = ''; out.appendChild(el('h1', '', c.title));
+  var card = el('div', 'card'); var cv = el('canvas'); card.appendChild(cv); drawer(cv, p);
+  card.appendChild(el('div', 'ser', c.serial)); var dl = el('dl');
+  [['Made by', 'Quinn, an AI pixel artist, live in DECK FORGE'], ['Made', c.made], ['Size', c.size + ' x ' + c.size + (c.frames > 1 ? ', animation of ' + c.frames + ' frames' : ', still picture')],
+   ['Owner', c.owner || 'Not sold yet'], ['Fingerprint', c.fingerprint]].forEach(function (x) { dl.appendChild(el('dt', '', x[0])); dl.appendChild(el('dd', '', x[1])); });
+  card.appendChild(dl); out.appendChild(card);
+  var b = el('div', 'box');
+  if (!c.owner && c.status === 'reserved') { b.innerHTML = '<b>This card was made on request.</b><p>It is reserved for the viewer who asked for it, at ' + money(r.request_price) + '. If nobody claims it, it may be put on sale later.</p>'; }
+  else if (!c.owner) { buyBox(b, r, c); }
+  else { b.innerHTML = '<b>This card belongs to ' + c.owner.replace(/[<>&]/g, '') + '.</b><p>Selling or trading it? Tell us the new owner and the price. The register is changed and a fee of ' + r.fee_percent + '% of the sale price is paid to the studio. A card whose new owner is not in the register counts as owner unconfirmed.</p>'; }
+  out.appendChild(b);
+  var h = el('div', 'box'); h.appendChild(el('b', '', 'History')); var ul = el('ul');
+  c.history.forEach(function (e) { ul.appendChild(el('li', '', e.date + ': ' + e.event + (e.price ? ' (' + e.price + ' dollars)' : ''))); }); h.appendChild(ul); out.appendChild(h);
+  out.appendChild(el('p', '', "The fingerprint is made from this card's exact pixels. A copy or an edited picture has a different fingerprint."));
+});
+</script></body></html>

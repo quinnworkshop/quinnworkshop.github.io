@@ -3,6 +3,31 @@
   var $ = function (id) { return document.getElementById(id); };
   var sl = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
   var SPOKEN = {}, TL_HAS_SAY = false;
+  var TOOLN = { PEN: 0, LINE: 1, BOX: 2, SOLID: 3 };
+  function putPx(px, n, x, y, c) {
+    if (x < 0 || y < 0 || x >= n || y >= n) return;
+    px[y * n + x] = c;
+  }
+  function linePx(px, n, x0, y0, x1, y1, c) {
+    var dx = Math.abs(x1 - x0), dy = -Math.abs(y1 - y0), sx = x0 < x1 ? 1 : -1, sy = y0 < y1 ? 1 : -1, e = dx + dy;
+    for (;;) { putPx(px, n, x0, y0, c); if (x0 === x1 && y0 === y1) break; var e2 = 2 * e; if (e2 >= dy) { e += dy; x0 += sx; } if (e2 <= dx) { e += dx; y0 += sy; } }
+  }
+  function boxPx(px, n, a, c, solid) {
+    var x0 = Math.min(a[0], a[2]), x1 = Math.max(a[0], a[2]), y0 = Math.min(a[1], a[3]), y1 = Math.max(a[1], a[3]);
+    for (var y = y0; y <= y1; y++) for (var x = x0; x <= x1; x++) if (solid || x === x0 || x === x1 || y === y0 || y === y1) putPx(px, n, x, y, c);
+  }
+  function orderPx(px, n, o) {
+    var t = TOOLN[o[0]], a = o[1], c = o[2];
+    if (t === 0) putPx(px, n, a[0], a[1], c);
+    else if (t === 1) linePx(px, n, a[0], a[1], a[2], a[3], c);
+    else if (t === 2) boxPx(px, n, a, c, false);
+    else if (t === 3) boxPx(px, n, a, c, true);
+  }
+  function fillFrame(p, f) {
+    var px = new Uint8Array(p.size * p.size);
+    for (var j = 0; j < f.length; j++) orderPx(px, p.size, f[j]);
+    return px;
+  }
   function norm(s) { return (s || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
   function wasSaid(s) { return !!SPOKEN[norm(s)]; }
   var SONGS = [
@@ -95,6 +120,43 @@
     else if (ev.type === 'bg' && window.QuinnVoice && QuinnVoice.bg) QuinnVoice.bg(ev.cat, ev.vol);
     else if (ev.type === 'rate') rating(ev);
   }
+  function stopReplay() {
+    if (!window.__replayOn) return;
+    window.__replayOn = false; run++;
+    if (window.QuinnVoice) QuinnVoice.stop();
+    try { frame.contentWindow.ROOM.hidePicture(); } catch (e) {}
+    $('state').textContent = 'Replay stopped.';
+  }
+  async function replay(p, id, rateNow) {
+    if (!p.frames || !p.frames.length) return false;
+    window.__replayOn = false;
+    var n = p.size, px = new Uint8Array(n * n), first = p.frames[0] || [];
+    try { frame.contentWindow.ROOM.showPartial(p, px); } catch (e) {}
+    for (var i = 0; i < first.length; i++) {
+      if (id !== run) return true;
+      orderPx(px, n, first[i]);
+      try { frame.contentWindow.ROOM.showPartial(p, px); } catch (e) {}
+      var txt = 'Drawing: order ' + (i + 1) + ' of ' + first.length;
+      $('state').textContent = txt; sayStep(p, txt, id);
+      await sl(250 + (i % 3) * 80);
+    }
+    if (id !== run) return true;
+    if (p.kind === 'anim') {
+      for (var f = 1; f < p.frames.length; f++) {
+        if (id !== run) return true;
+        try { frame.contentWindow.ROOM.showPartial(p, fillFrame(p, p.frames[f])); } catch (e) {}
+        $('state').textContent = 'Frame ' + (f + 1) + ' of ' + p.frames.length;
+        await sl(90);
+      }
+    }
+    if (id !== run) return true;
+    rating(rateNow); wear('chat'); look('front');
+    $('state').textContent = p.kind === 'anim' ? 'Finished. The animation is playing.' : 'Finished. This piece is a still picture.';
+    try { frame.contentWindow.ROOM.showPicture(p); } catch (e) {}
+    window.__replayOn = true;
+    setTimeout(function () { if (id === run) wear('rest'); }, 9000);
+    return true;
+  }
   // 19 Nov 2026 (Sam): selling step 1. A requested painting can be bought by the person who asked for it, for 5 dollars, during
   // the first 7 days (PayPal.me; Sam checks the buyer's name). After that: auction (coming soon). Every piece is one of a kind.
   var PAYPAL = 'https://paypal.me/samwalcarius/5USD';
@@ -115,6 +177,7 @@
     }
   }  async function play(i) {
     var p = PIECES[i], id = ++run;
+    window.__replayOn = false;
     if (window.QuinnVoice) QuinnVoice.stop();
     try { frame.contentWindow.ROOM.stopVideo(); frame.contentWindow.ROOM.hidePicture(); } catch (e) {}
     SPOKEN = {}; TL_HAS_SAY = false;
@@ -134,6 +197,8 @@
     if (id !== run) return;
     var rateNow = p.rate || {};
     if (!rec) {
+      var replayed = await replay(p, id, rateNow);
+      if (replayed || id !== run) return;
       rating(rateNow); wear('chat'); look('front');
       $('state').textContent = 'Finished. This piece is a still picture.'; try { frame.contentWindow.ROOM.showPicture(p); } catch (e) {}
       setTimeout(function () { if (id === run) wear('rest'); }, 9000);
@@ -332,6 +397,13 @@
       QuinnAnime.start($('qcam')); $('qcam').hidden = false; var sv0 = $('quinn'); if (sv0) sv0.style.display = 'none'; var x0 = $('qextra'); if (x0) x0.innerHTML = '';
     }
     wear('rest'); song(); requestAnimationFrame(groove);
+    document.addEventListener('pointerdown', function (e) {
+      if (!window.__replayOn) return;
+      var t = e.target;
+      if (t && t.closest && t.closest('#gal')) return;
+      if (t && t.id === 'vbtn') return;
+      stopReplay();
+    }, true);
     var voiceStarted = false;
     document.addEventListener('pointerdown', function (e) {
       if (e.target && e.target.id === 'vbtn') { voiceStarted = true; return; }
@@ -340,7 +412,7 @@
     window.onQuinnVoiceOn = function () { if (window.__voiceIntro) return; window.__voiceIntro = true; window.__introDone = false; play(window.__cur || 0); };
     $('say').textContent = 'Click anywhere to wake Quinn. Then click the gallery or the room to watch her work.';
     $('state').textContent = 'Her voice and music start with your first click.';
-    window.QUINN_SITE = { play: play, music: music, room: function () { return frame.contentWindow.ROOM; }, scene: scene, what: what, arcade: arcade };
+    window.QUINN_SITE = { play: play, music: music, room: function () { return frame.contentWindow.ROOM; }, scene: scene, what: what, arcade: arcade, stopReplay: stopReplay };
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();

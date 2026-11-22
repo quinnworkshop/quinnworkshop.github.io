@@ -14,10 +14,10 @@ select{background:var(--card);color:var(--fg);border:2px solid var(--edge);borde
 </style></head><body><main>
 <div class="top"><h1>QUINN'S CARD SHOP</h1><a href="index.html">Back to Quinn's workshop</a></div>
 <p>Every picture Quinn makes live in DECK FORGE becomes a numbered card. One card, one serial number, one ID page that shows who owns it.</p>
-<div class="how"><b>How it works.</b> Pick a card. Prices go by size: 16 x 16 <span id="p16"></span>, 32 x 32 <span id="p32"></span>, 64 x 64 <span id="p64"></span>, 128 x 128 <span id="p128"></span> (dollars). Pay on the tip page and write the card number in the message. Quinn's studio then sends you the full card file and puts your name on the card's ID page. Sold or traded your card later? Tell us, and the owner on the ID page changes; the fee for that is <span id="fee">20</span>% of the sale price.</div>
+<div class="how"><b>How it works.</b> Pick a card. Prices go by size: 16 x 16 <span id="p16"></span>, 32 x 32 <span id="p32"></span>, 64 x 64 <span id="p64"></span>, 128 x 128 <span id="p128"></span> (dollars). Open a card and press Get this card: you pay in a secure checkout (cards and Google Pay), type the name you want on the card, and get a licence key. Paste it on the claim page to download your card file; your name appears on the card's ID page at once. Want it on your wall? Every card can also come as a framed print (30 x 30 cm). Sold or traded your card later? Tell us, and the owner on the ID page changes; the fee for that is <span id="fee">20</span>% of the sale price.</div>
 <label>Show <select id="f"><option value="for sale">cards for sale</option><option value="reserved">cards reserved for the viewer who asked for them</option><option value="owned">cards that have an owner</option><option value="">all cards</option></select></label>
 <div id="grid"></div></main>
-<script src="pieces.js"></script><script src="cards.js"></script>
+<script src="pieces.js"></script><script src="cards.js?v=20261122b"></script>
 <script>
 var REG = null;
 function show() { var g = document.getElementById('grid'), f = document.getElementById('f').value; g.innerHTML = '';

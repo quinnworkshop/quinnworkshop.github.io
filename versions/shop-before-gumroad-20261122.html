@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quinn's Card Shop</title><meta name="description" content="Numbered pixel-art cards made live by Quinn, an AI pixel artist, in DECK FORGE. Every card has its own serial number and ID page.">
+<style>
+:root{--bg:#0d1020;--card:#171c36;--edge:#2b3366;--teal:#3fd6c1;--amber:#ffbf47;--fg:#e8ecff;--mut:#9aa3d6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif;padding:16px max(16px,env(safe-area-inset-left))}
+main{max-width:980px;margin:0 auto}h1{font-size:28px;margin:8px 0}a{color:var(--teal)}
+.top{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;justify-content:space-between}
+.how{background:var(--card);border:2px solid var(--edge);border-radius:10px;padding:12px 16px;margin:12px 0}.how b{color:var(--amber)}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:12px}
+.c{background:var(--card);border:2px solid var(--edge);border-radius:10px;padding:8px;text-decoration:none;color:var(--fg);display:block}.c:hover,.c:focus-visible{border-color:var(--teal);outline:none}
+.c canvas{width:100%;aspect-ratio:1;image-rendering:pixelated;display:block;background:#000;border-radius:6px}
+.c .s{font:12px/1.3 ui-monospace,monospace;color:var(--mut);margin-top:6px}.c .t{font-weight:600;font-size:14px}.c .p{color:var(--amber);font-size:13px}.c .o{color:var(--teal);font-size:13px}
+select{background:var(--card);color:var(--fg);border:2px solid var(--edge);border-radius:6px;padding:6px}
+</style></head><body><main>
+<div class="top"><h1>QUINN'S CARD SHOP</h1><a href="index.html">Back to Quinn's workshop</a></div>
+<p>Every picture Quinn makes live in DECK FORGE becomes a numbered card. One card, one serial number, one ID page that shows who owns it.</p>
+<div class="how"><b>How it works.</b> Pick a card. Prices go by size: 16 x 16 <span id="p16"></span>, 32 x 32 <span id="p32"></span>, 64 x 64 <span id="p64"></span>, 128 x 128 <span id="p128"></span> (dollars). Pay on the tip page and write the card number in the message. Quinn's studio then sends you the full card file and puts your name on the card's ID page. Sold or traded your card later? Tell us, and the owner on the ID page changes; the fee for that is <span id="fee">20</span>% of the sale price.</div>
+<label>Show <select id="f"><option value="for sale">cards for sale</option><option value="reserved">cards reserved for the viewer who asked for them</option><option value="owned">cards that have an owner</option><option value="">all cards</option></select></label>
+<div id="grid"></div></main>
+<script src="pieces.js"></script><script src="cards.js"></script>
+<script>
+var REG = null;
+function show() { var g = document.getElementById('grid'), f = document.getElementById('f').value; g.innerHTML = '';
+  REG.cards.slice().reverse().forEach(function (c) { if (f && c.status !== f) return; var p = pieceOf(c.piece); if (!p) return;
+    var a = el('a', 'c'); a.href = 'card.html?c=' + c.serial; var cv = el('canvas'); a.appendChild(cv); drawer(cv, p);
+    a.appendChild(el('div', 't', c.title)); a.appendChild(el('div', 's', c.serial + ' · ' + c.size + 'x' + c.size + (c.frames > 1 ? ' · ' + c.frames + ' frames' : '')));
+    a.appendChild(c.owner ? el('div', 'o', 'Owner: ' + c.owner) : c.status === 'reserved' ? el('div', 'o', 'Reserved for the viewer who asked for it') : el('div', 'p', money(priceOf(REG, c)))); g.appendChild(a); }); }
+loadCards(function (r) { if (!r) { document.getElementById('grid').textContent = 'The shop could not load. Please try again in a moment.'; return; }
+  REG = r; ['16','32','64','128'].forEach(function (k) { document.getElementById('p' + k).textContent = r.prices[k]; }); document.getElementById('fee').textContent = r.fee_percent; show(); });
+document.getElementById('f').onchange = function () { if (REG) show(); };
+</script></body></html>
