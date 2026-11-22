@@ -13,7 +13,7 @@ dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:10px 0
 ul{padding-left:20px;margin:6px 0}.wall{background:#d9d3ca;border-radius:12px;padding:22px;max-width:420px;margin:8px 0}.fr{aspect-ratio:1;padding:3.7%;box-shadow:0 8px 14px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.18);position:relative}.fr.white{background:#f3f2ee}.fr.wood{background:linear-gradient(135deg,#d3ae78,#bd9559)}.fr.dark{background:linear-gradient(135deg,#6a4629,#4a2f1b)}.fr.black{background:#161616}.fr canvas{width:100%;height:100%;display:block;image-rendering:pixelated;box-shadow:0 0 0 2px rgba(0,0,0,.28) inset;background:#000;border-radius:0;aspect-ratio:auto;max-width:none;margin:0}.strip{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}.strip canvas{width:56px;height:56px;image-rendering:pixelated;background:#000;border:2px solid var(--edge);border-radius:4px;cursor:pointer}.strip canvas.on{border-color:var(--amber)}.frames{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.frames button{font:inherit;padding:6px 12px;border-radius:8px;border:2px solid var(--edge);background:var(--card);color:var(--fg);cursor:pointer}.frames button[aria-pressed=true]{border-color:var(--teal)}code{background:#0a0d1c;padding:1px 6px;border-radius:4px}
 </style><link rel="stylesheet" href="relics.css"></head><body><main>
 <p><a href="shop.html">&larr; All Pixel Relics</a></p><div id="out">Loading the card...</div></main>
-<script src="pieces.js"></script><script src="cards.js?v=20261122b"></script>
+<script src="pieces.js"></script><script src="cards.js?v=20261122b"></script><script src="rarity-data.js?v=1"></script><script src="relics-rarity.js?v=1"></script>
 <script>
 var q = (location.search.match(/[?&]c=(QW-\d{6})/) || [])[1], out = document.getElementById('out');
 loadCards(function (r) { var c = r && r.cards.filter(function (x) { return x.serial === q; })[0], p = c && pieceOf(c.piece);
@@ -23,14 +23,14 @@ loadCards(function (r) { var c = r && r.cards.filter(function (x) { return x.ser
   if (c.owner) card.appendChild(el('div', 'ribbon', 'SOLD')); card.appendChild(el('div', 'ser', c.serial)); var dl = el('dl');
   [['Made by', 'Quinn, an AI pixel artist, live in DECK FORGE'], ['Made', c.made], ['Size', c.size + ' x ' + c.size + (c.frames > 1 ? ', animation of ' + c.frames + ' frames' : ', still picture')],
    ['Owner', c.owner || 'Not sold yet'], ['Fingerprint', c.fingerprint]].forEach(function (x) { dl.appendChild(el('dt', '', x[0])); dl.appendChild(el('dd', '', x[1])); });
-  card.appendChild(dl); out.appendChild(card);
+  card.appendChild(dl); out.appendChild(card); if (window.relicPanel) out.appendChild(relicPanel(c));   // 22 Nov 2026: rarity panel
   var b = el('div', 'box');
   var K = (location.search.match(/[?&]k=([0-9a-f]{24})/) || [])[1];
   if (!c.owner && c.status === 'paused') { b.innerHTML = '<b>Being prepared.</b><p>This card is being finished. It will be back on sale soon.</p>'; }   // 22 Nov 2026 (Sam): cards being remade are not for sale
   else if (!c.owner && c.status === 'reserved' && K) { buyBox(b, r, c, K); }
   else if (!c.owner && c.status === 'reserved') { b.innerHTML = '<b>This card was made on request.</b><p>It is reserved for the viewer who asked for it, at ' + money(r.request_price) + '. If nobody claims it, it may be put on sale later.</p><p>Did you ask for this picture? Quinn gives you your personal link on stream. With it you can get the card, and also choose a framed print of it.</p>'; }
   else if (!c.owner) { buyBox(b, r, c); }
-  else { b.innerHTML = '<b>Sold. This picture belongs to ' + c.owner.replace(/[<>&]/g, '') + '.</b><p>It is one of a kind: it can not be bought again, and nobody else can order a print of it.</p><p>Are you the owner and did you not print it yet? You can still order your framed print, 30 x 30 cm: <a href="claim.html">paste your licence key on the claim page</a> and choose Add a framed print.</p><p>Selling or trading it? Tell us the new owner and the price. The register is changed and a fee of ' + r.fee_percent + '% of the sale price is paid to the studio. A card whose new owner is not in the register counts as owner unconfirmed.</p>'; }
+  else { b.innerHTML = '<b>Sold. This picture belongs to ' + c.owner.replace(/[<>&]/g, '') + '.</b><p>It is one of a kind, and it has an owner now. Only its owner can order the framed print.</p><p>Are you the owner and did you not print it yet? You can still order your framed print, 30 x 30 cm: <a href="claim.html">paste your licence key on the claim page</a> and choose Add a framed print.</p>'; }
   out.appendChild(b);
   var h = el('div', 'box'); h.appendChild(el('b', '', 'History')); var ul = el('ul');
   c.history.forEach(function (e) { ul.appendChild(el('li', '', e.date + ': ' + e.event + (e.price ? ' (' + e.price + ' dollars)' : ''))); }); h.appendChild(ul); out.appendChild(h);
