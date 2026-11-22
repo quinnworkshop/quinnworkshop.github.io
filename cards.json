@@ -1,5 +1,5 @@
 {
- "next": 170,
+ "next": 172,
  "fee_percent": 20,
  "cards": [
   {
@@ -3281,6 +3281,46 @@
     }
    ],
    "card_colour": "rose"
+  },
+  {
+   "serial": "QW-000170",
+   "piece": "live-20261122-203816",
+   "title": "One More Game Before Dawn",
+   "kind": "still",
+   "size": 64,
+   "frames": 1,
+   "made": "2026-11-22 20:38",
+   "fingerprint": "89abb1e4ec16c6f5d35807b35e6d7779c1b3909ca7f7756eb40f13bf6bbab464",
+   "owner": "",
+   "requested": false,
+   "status": "for sale",
+   "history": [
+    {
+     "date": "2026-11-22",
+     "event": "made by Quinn"
+    }
+   ],
+   "card_colour": "rose"
+  },
+  {
+   "serial": "QW-000171",
+   "piece": "live-20261122-204550",
+   "title": "Last Light at the Pass",
+   "kind": "still",
+   "size": 32,
+   "frames": 1,
+   "made": "2026-11-22 20:45",
+   "fingerprint": "72213d7c9611480a07216e5a7ff44d22470ea079a0d1277522cc0eb8fabac100",
+   "owner": "",
+   "requested": false,
+   "status": "for sale",
+   "history": [
+    {
+     "date": "2026-11-22",
+     "event": "made by Quinn"
+    }
+   ],
+   "card_colour": "cyan"
   }
  ],
  "prices": {
