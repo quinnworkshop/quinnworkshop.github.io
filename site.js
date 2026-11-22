@@ -108,7 +108,9 @@
     var m = /^Drawing: order (\d+) of/.exec(text || '');
     if (!m) return;
     var steps = ((STORY[p.id] || {}).steps || []), i = parseInt(m[1], 10) - 1;
-    for (var k = 0; k < steps.length; k++) if (steps[k].f === 1 && steps[k].at === i && steps[k].say) type(steps[k].say, id, p.id + '.s1.' + i);
+    var pr = null;   // 22 Nov 2026 (Sam): the replay must WAIT for each spoken line (a new line cut the one still being spoken); replay() awaits this
+    for (var k = 0; k < steps.length; k++) if (steps[k].f === 1 && steps[k].at === i && steps[k].say) pr = type(steps[k].say, id, p.id + '.s1.' + i);
+    return pr;
   }
   function applyEvent(ev, id, p) {
     if (ev.type === 'state') { $('state').textContent = ev.text || ''; sayStep(p, ev.text, id); }
@@ -137,7 +139,7 @@
       orderPx(px, n, first[i]);
       try { frame.contentWindow.ROOM.showPartial(p, px); } catch (e) {}
       var txt = 'Drawing: order ' + (i + 1) + ' of ' + first.length;
-      $('state').textContent = txt; sayStep(p, txt, id);
+      $('state').textContent = txt; var spoken = sayStep(p, txt, id); if (spoken) await spoken;
       await sl(250 + (i % 3) * 80);
     }
     if (id !== run) return true;
