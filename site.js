@@ -416,6 +416,8 @@
     window.onQuinnVoiceOn = function () { if (window.__voiceIntro) return; window.__voiceIntro = true; window.__introDone = false; play(window.__cur || 0); };
     $('say').textContent = 'Click anywhere to wake Quinn. Then click the gallery or the room to watch her work.';
     $('state').textContent = 'Her voice and music start with your first click.';
+    var hm = /^#replay-(.+)$/.exec(location.hash || '');   // 22 Nov 2026 (Sam): 'Watch how it was made' on every Relic page opens its replay here
+    if (hm) { var ix = PIECES.map(function (x) { return x.id; }).indexOf(decodeURIComponent(hm[1])); if (ix >= 0) setTimeout(function () { play(ix); try { $('gal').children[ix].scrollIntoView({ block: 'nearest' }); } catch (e) {} }, 1200); }
     window.QUINN_SITE = { play: play, music: music, room: function () { return frame.contentWindow.ROOM; }, scene: scene, what: what, arcade: arcade, stopReplay: stopReplay };
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();

@@ -414,16 +414,21 @@
    "size": 32,
    "frames": 7,
    "made": "2026-11-19 03:51",
-   "fingerprint": "94670f3860fa559ea5b1907c606743b75ac43a42c207ca8c7763f66dd6dd89b1",
+   "fingerprint": "dbe04708834b5af097746f180cc4df5cbfa21b407e4a648f27e74b8fb178c2b7",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "green"
+   "card_colour": "green",
+   "fingerprint_old": "94670f3860fa559ea5b1907c606743b75ac43a42c207ca8c7763f66dd6dd89b1"
   },
   {
    "serial": "QW-000023",
@@ -490,16 +495,21 @@
    "size": 32,
    "frames": 8,
    "made": "2026-11-19 04:13",
-   "fingerprint": "4bce7129e903724e98e7840f97364c1070eab714de4eb335a61e87ce123da399",
+   "fingerprint": "9c0932c40987974dade39392c5cc7028838b05e0aeef9fde825b305b9cac8b78",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "rose"
+   "card_colour": "rose",
+   "fingerprint_old": "4bce7129e903724e98e7840f97364c1070eab714de4eb335a61e87ce123da399"
   },
   {
    "serial": "QW-000027",
@@ -548,16 +558,21 @@
    "size": 32,
    "frames": 6,
    "made": "2026-11-19 04:42",
-   "fingerprint": "2454856567983ac1cc4f8205ba74fed50e09665cd1d71d19b2966288587cac60",
+   "fingerprint": "31fab1bcdf4349fe8071a84fdf61c0193e9a7db04e5d59cd2c8e26b0e72e4b83",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "azure"
+   "card_colour": "azure",
+   "fingerprint_old": "2454856567983ac1cc4f8205ba74fed50e09665cd1d71d19b2966288587cac60"
   },
   {
    "serial": "QW-000030",
@@ -605,16 +620,21 @@
    "size": 32,
    "frames": 8,
    "made": "2026-11-19 05:05",
-   "fingerprint": "3b595f200df86f0e3b8c12e2bf11f05eece646c1f5cdcee13f6f71d2553a613e",
+   "fingerprint": "78935ae0ed776c160b0330f4a151b7d1312d162f3d091ebf7a5e9bd073e6c56c",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "magenta"
+   "card_colour": "magenta",
+   "fingerprint_old": "3b595f200df86f0e3b8c12e2bf11f05eece646c1f5cdcee13f6f71d2553a613e"
   },
   {
    "serial": "QW-000033",
@@ -815,16 +835,21 @@
    "size": 32,
    "frames": 6,
    "made": "2026-11-19 06:59",
-   "fingerprint": "a98c1ebe99664f5b14dde4dadc7cf1d3c1df86e609c2fed160bd1b0c55781866",
+   "fingerprint": "311bb2d5c7e0accc61311336f0cd434a0fbad5838366e473d54133548c47feb9",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "blue"
+   "card_colour": "blue",
+   "fingerprint_old": "a98c1ebe99664f5b14dde4dadc7cf1d3c1df86e609c2fed160bd1b0c55781866"
   },
   {
    "serial": "QW-000044",
@@ -1101,16 +1126,21 @@
    "size": 32,
    "frames": 6,
    "made": "2026-11-19 10:47",
-   "fingerprint": "05ed2773253a9254d8539e8b0b5d2aea5fbebd7885339aa9442527d24f22b47f",
+   "fingerprint": "fb11d7561c00d33165cd4b2c0ea0cc9df5b5f9034cbf3feb0847c0adfed0d35a",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "azure"
+   "card_colour": "azure",
+   "fingerprint_old": "05ed2773253a9254d8539e8b0b5d2aea5fbebd7885339aa9442527d24f22b47f"
   },
   {
    "serial": "QW-000059",
@@ -1178,16 +1208,21 @@
    "size": 64,
    "frames": 5,
    "made": "2026-11-19 12:06",
-   "fingerprint": "f57bf30b1d0dc55aae90802c376dddc411daa9b03b5f596b879cf78afb9ca444",
+   "fingerprint": "0e10aebc36c75d4fd3ccbcbb1e104105994c44d9d343ddbcdbffcdb7d00ac0d1",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "grey"
+   "card_colour": "grey",
+   "fingerprint_old": "f57bf30b1d0dc55aae90802c376dddc411daa9b03b5f596b879cf78afb9ca444"
   },
   {
    "serial": "QW-000063",
@@ -1391,16 +1426,21 @@
    "size": 32,
    "frames": 7,
    "made": "2026-11-19 14:33",
-   "fingerprint": "2575ac1e50a8ee5c839784951fd3b36557f7d548016885401fde1c4e328f9425",
+   "fingerprint": "96535f4c94be9941c60a299a50dd87897094bdbd5314f0b8cc3bf169b098d76d",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "lime"
+   "card_colour": "lime",
+   "fingerprint_old": "2575ac1e50a8ee5c839784951fd3b36557f7d548016885401fde1c4e328f9425"
   },
   {
    "serial": "QW-000074",
@@ -1429,16 +1469,21 @@
    "size": 32,
    "frames": 4,
    "made": "2026-11-19 15:08",
-   "fingerprint": "fe4090c095dc42e50ccb7199537b1e5fdea62eecc8e2503d9c3070d045da5f5d",
+   "fingerprint": "24bb6c94533514feeb441f007cb8252fa127582b3a2710c595e9d1747f17ad77",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "indigo"
+   "card_colour": "indigo",
+   "fingerprint_old": "fe4090c095dc42e50ccb7199537b1e5fdea62eecc8e2503d9c3070d045da5f5d"
   },
   {
    "serial": "QW-000076",
@@ -1448,16 +1493,21 @@
    "size": 16,
    "frames": 5,
    "made": "2026-11-19 15:20",
-   "fingerprint": "1294e78736c9bd7503bf02832cacc3e7b903fecb7d5afeb6f0864e05e1fc9c97",
+   "fingerprint": "e02de77d518291833e158ef86493d88a8ffeecb4de97cb7c3bae485f16051ba1",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "grey"
+   "card_colour": "grey",
+   "fingerprint_old": "1294e78736c9bd7503bf02832cacc3e7b903fecb7d5afeb6f0864e05e1fc9c97"
   },
   {
    "serial": "QW-000077",
@@ -1486,16 +1536,21 @@
    "size": 32,
    "frames": 5,
    "made": "2026-11-19 15:49",
-   "fingerprint": "30a98699ad7675475e6de01ccdd8bac09f1cf311b007beb4fdbdac1ee07b3779",
+   "fingerprint": "708abe2cb080dc84a8d57ac94e6ebf47ea3c686dcca2df65557a6f896b3ed35d",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "azure"
+   "card_colour": "azure",
+   "fingerprint_old": "30a98699ad7675475e6de01ccdd8bac09f1cf311b007beb4fdbdac1ee07b3779"
   },
   {
    "serial": "QW-000079",
@@ -1582,16 +1637,21 @@
    "size": 64,
    "frames": 5,
    "made": "2026-11-19 17:06",
-   "fingerprint": "0be098fe9b14c0388b0e15de0b5222dea4a9019c88ceeb8aeb4add3b9f3ed722",
+   "fingerprint": "71dc52a4759f5c3c768673c29dff632669cf910e882c4103a6b26675bcb95833",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "indigo"
+   "card_colour": "indigo",
+   "fingerprint_old": "0be098fe9b14c0388b0e15de0b5222dea4a9019c88ceeb8aeb4add3b9f3ed722"
   },
   {
    "serial": "QW-000084",
@@ -1658,16 +1718,21 @@
    "size": 64,
    "frames": 7,
    "made": "2026-11-19 18:05",
-   "fingerprint": "ab43f1343901a85bd37d2f48cbe09f53912327b62a4846a7c442626f0ff4e8fc",
+   "fingerprint": "7dbf4401827559986640d5b8ccbb8e3b45d9ea9549b426dae3c8d2a8744cd20a",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "grey"
+   "card_colour": "grey",
+   "fingerprint_old": "ab43f1343901a85bd37d2f48cbe09f53912327b62a4846a7c442626f0ff4e8fc"
   },
   {
    "serial": "QW-000088",
@@ -1848,16 +1913,21 @@
    "size": 32,
    "frames": 6,
    "made": "2026-11-19 20:34",
-   "fingerprint": "67dc8b3a2243d776723151b6d57b22ad0a2f12871fa5976fc989153032ea7d11",
+   "fingerprint": "c0a020bcd186075c111d8bd2e66709bb4e333d23572ebd3cbc1eec03c242df3b",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "magenta"
+   "card_colour": "magenta",
+   "fingerprint_old": "67dc8b3a2243d776723151b6d57b22ad0a2f12871fa5976fc989153032ea7d11"
   },
   {
    "serial": "QW-000098",
@@ -1924,16 +1994,21 @@
    "size": 32,
    "frames": 4,
    "made": "2026-11-19 21:36",
-   "fingerprint": "6493d46323ba3e1c5c1cd551bde2529cee3765fe87a6cc15a9c47272486966f0",
+   "fingerprint": "b5f7ab90f059cc3a9110104366070fc1865c4c4461348047f99542f08384e813",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "green"
+   "card_colour": "green",
+   "fingerprint_old": "6493d46323ba3e1c5c1cd551bde2529cee3765fe87a6cc15a9c47272486966f0"
   },
   {
    "serial": "QW-000102",
@@ -2019,16 +2094,21 @@
    "size": 32,
    "frames": 10,
    "made": "2026-11-19 22:55",
-   "fingerprint": "c25456d61a4fda2e5cb54a83e98ae7ce4280637e77aff8174428c533b8688f64",
+   "fingerprint": "98871aebe5b50ea9d8a4da636ef6165c9e64e2ed8078f2b621de3f1ecce4a3b7",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "orange"
+   "card_colour": "orange",
+   "fingerprint_old": "c25456d61a4fda2e5cb54a83e98ae7ce4280637e77aff8174428c533b8688f64"
   },
   {
    "serial": "QW-000107",
@@ -2038,16 +2118,21 @@
    "size": 32,
    "frames": 7,
    "made": "2026-11-19 23:11",
-   "fingerprint": "062749ce104d9ec4c05a40664899d3a1cc849c2dd9eb8fc218b8760f88b75a7c",
+   "fingerprint": "6692f2f88858325fc78bc277f5898b8e41428c947004578cf5c52540a1390653",
    "owner": "",
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-19",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "all animation frames added, new fingerprint"
     }
    ],
-   "card_colour": "crimson"
+   "card_colour": "crimson",
+   "fingerprint_old": "062749ce104d9ec4c05a40664899d3a1cc849c2dd9eb8fc218b8760f88b75a7c"
   },
   {
    "serial": "QW-000108",
@@ -2289,7 +2374,7 @@
    "size": 32,
    "frames": 1,
    "made": "2026-11-22 17:04",
-   "fingerprint": "3de85f594c12feeb134b0fcbf0a904a636b801b5c2b89ca07dfa84951549fe6b",
+   "fingerprint": "937e17a06080cc6a9c3322452061cee062dd835ae735d9ff4de1599088d96452",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2297,9 +2382,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "blue"
+   "card_colour": "blue",
+   "fingerprint_old": "3de85f594c12feeb134b0fcbf0a904a636b801b5c2b89ca07dfa84951549fe6b"
   },
   {
    "serial": "QW-000121",
@@ -2329,7 +2419,7 @@
    "size": 64,
    "frames": 1,
    "made": "2026-11-22 08:16",
-   "fingerprint": "76395281d0ad9f1af34207924e81edcbda9014668a3f67581179977516024f73",
+   "fingerprint": "8869da2a6f71ebc06b5edbcc9eb67a48a3ca6a185caae7df91033ae2508cdb62",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2337,9 +2427,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "magenta"
+   "card_colour": "magenta",
+   "fingerprint_old": "76395281d0ad9f1af34207924e81edcbda9014668a3f67581179977516024f73"
   },
   {
    "serial": "QW-000123",
@@ -2349,7 +2444,7 @@
    "size": 32,
    "frames": 1,
    "made": "2026-11-22 12:44",
-   "fingerprint": "d3d2845de410c22c9ef481a85b56f2957f8dd2d7e71a3704d2ec6ba5c0cd0d8c",
+   "fingerprint": "8f09c8ee32861b373ba5bd1c2987e954a59eb499cc3205a1df32ca931eb2b710",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2357,9 +2452,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "fingerprint_old": "d3d2845de410c22c9ef481a85b56f2957f8dd2d7e71a3704d2ec6ba5c0cd0d8c"
   },
   {
    "serial": "QW-000124",
@@ -2369,7 +2469,7 @@
    "size": 32,
    "frames": 1,
    "made": "2026-11-22 13:22",
-   "fingerprint": "70de314bf4d1900603ff21d3220198373b20eb337811e6fb37b27abd373b3b81",
+   "fingerprint": "d3d5aa6d8b4ef9e65b6d9e80138fac9ead8ffaf7971f15d8c9555f98818d47b1",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2377,9 +2477,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "teal"
+   "card_colour": "teal",
+   "fingerprint_old": "70de314bf4d1900603ff21d3220198373b20eb337811e6fb37b27abd373b3b81"
   },
   {
    "serial": "QW-000125",
@@ -2389,7 +2494,7 @@
    "size": 128,
    "frames": 1,
    "made": "2026-11-22 14:06",
-   "fingerprint": "e5a6f071d3e5b61e1b99a197559c76649a415d5f05f87f8b94e56ec9cf1d14e8",
+   "fingerprint": "19180bb8d10b049193a7cceeca84420e52a502d15772be8161d56b797d65b18d",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2397,9 +2502,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "fingerprint_old": "e5a6f071d3e5b61e1b99a197559c76649a415d5f05f87f8b94e56ec9cf1d14e8"
   },
   {
    "serial": "QW-000126",
@@ -2409,7 +2519,7 @@
    "size": 32,
    "frames": 1,
    "made": "2026-11-22 14:35",
-   "fingerprint": "1667a31d5165a58d45a0fa88ff1f69713b807fd1f2093cd9d09ee261d85004f9",
+   "fingerprint": "53867a9576ae12d291ee48b1eebc19800dcfae79fb1534e676a2fc109d54071a",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2417,9 +2527,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "rose"
+   "card_colour": "rose",
+   "fingerprint_old": "1667a31d5165a58d45a0fa88ff1f69713b807fd1f2093cd9d09ee261d85004f9"
   },
   {
    "serial": "QW-000127",
@@ -2429,7 +2544,7 @@
    "size": 16,
    "frames": 1,
    "made": "2026-11-22 15:46",
-   "fingerprint": "b11003fe0cb4604ab318312bd39063b90300fbaa1b66f6913f4365620a1ec57f",
+   "fingerprint": "6d529ac846d4d12f112658ebc3ddd0a27deb79ee05989140e64eed5c4109e2ba",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2437,9 +2552,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "indigo"
+   "card_colour": "indigo",
+   "fingerprint_old": "b11003fe0cb4604ab318312bd39063b90300fbaa1b66f6913f4365620a1ec57f"
   },
   {
    "serial": "QW-000128",
@@ -2449,7 +2569,7 @@
    "size": 128,
    "frames": 1,
    "made": "2026-11-22 15:58",
-   "fingerprint": "efdff49d762cddae11cd1bfcdbd1de436a9dc1ea4e40ac284fd779c9dcb58546",
+   "fingerprint": "7b1ed0a514ac47ea4413356f4e4cfcfff4a646c74d66390368b96ddd10b2415e",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2457,9 +2577,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "lime"
+   "card_colour": "lime",
+   "fingerprint_old": "efdff49d762cddae11cd1bfcdbd1de436a9dc1ea4e40ac284fd779c9dcb58546"
   },
   {
    "serial": "QW-000129",
@@ -2469,7 +2594,7 @@
    "size": 32,
    "frames": 1,
    "made": "2026-11-22 17:31",
-   "fingerprint": "41a91ccc706319aaaaef6efff107a0cffc70dadd9e8fcd1cf2e69b161405ebde",
+   "fingerprint": "bd70aacab586476cf01bf593c42dc87f04ee74ba620b6e2f137080376dc2fdf8",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2477,9 +2602,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "grey"
+   "card_colour": "grey",
+   "fingerprint_old": "41a91ccc706319aaaaef6efff107a0cffc70dadd9e8fcd1cf2e69b161405ebde"
   },
   {
    "serial": "QW-000130",
@@ -2489,7 +2619,7 @@
    "size": 32,
    "frames": 1,
    "made": "2026-11-22 17:44",
-   "fingerprint": "d4cceea14cbcce39956915cf6ed51b45ef0789e92f12de4588fe0a838570b1f8",
+   "fingerprint": "9c27e1dfc84d9264b5119ca1d66833120fbf64c20a4249dbe48d0ff1b67c8507",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2497,9 +2627,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "orange"
+   "card_colour": "orange",
+   "fingerprint_old": "d4cceea14cbcce39956915cf6ed51b45ef0789e92f12de4588fe0a838570b1f8"
   },
   {
    "serial": "QW-000131",
@@ -2509,7 +2644,7 @@
    "size": 64,
    "frames": 1,
    "made": "2026-11-22 14:20",
-   "fingerprint": "b3ff3393db17e037ad88df69d217c5d8e54ab99aac24ad9674a3a6afcd09985c",
+   "fingerprint": "989cf05a915d3f0a0c289fd9751def87ca359874b147cedb23073cfe28fe185c",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2517,9 +2652,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "magenta"
+   "card_colour": "magenta",
+   "fingerprint_old": "b3ff3393db17e037ad88df69d217c5d8e54ab99aac24ad9674a3a6afcd09985c"
   },
   {
    "serial": "QW-000132",
@@ -2549,7 +2689,7 @@
    "size": 32,
    "frames": 1,
    "made": "2026-11-22 14:58",
-   "fingerprint": "bccca67e3f516806148283be0dcc806671ea5bb0525ce4c665bfca903f31ff5c",
+   "fingerprint": "6dca2a2237db44342d1d878df5c2621468cedc3121f302c767edb3dce0be6b3d",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2557,9 +2697,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "rose"
+   "card_colour": "rose",
+   "fingerprint_old": "bccca67e3f516806148283be0dcc806671ea5bb0525ce4c665bfca903f31ff5c"
   },
   {
    "serial": "QW-000134",
@@ -2589,7 +2734,7 @@
    "size": 16,
    "frames": 6,
    "made": "2026-11-22 16:21",
-   "fingerprint": "e1b112ac5c2916b92f37a1070db36eae4f3068c403b4358aa04de4bc36d9afb3",
+   "fingerprint": "145af0153a4d98bae57a2dcc7757db5d8070113fad1d3cd2876c0382c3e24f93",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2597,9 +2742,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "fingerprint_old": "e1b112ac5c2916b92f37a1070db36eae4f3068c403b4358aa04de4bc36d9afb3"
   },
   {
    "serial": "QW-000136",
@@ -2729,7 +2879,7 @@
    "size": 128,
    "frames": 5,
    "made": "2026-11-22 09:06",
-   "fingerprint": "a91982c0b7cbb25d2c522d49b411c570cdd05a971c0a9bf24fe37fd8d4af0cf3",
+   "fingerprint": "c4e5ef32155e66d03e34e797b572fa4e24ebfc42311539c933d56821ae8db8da",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2737,9 +2887,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "amber"
+   "card_colour": "amber",
+   "fingerprint_old": "a91982c0b7cbb25d2c522d49b411c570cdd05a971c0a9bf24fe37fd8d4af0cf3"
   },
   {
    "serial": "QW-000143",
@@ -2749,7 +2904,7 @@
    "size": 64,
    "frames": 7,
    "made": "2026-11-22 09:36",
-   "fingerprint": "cc541e46984b14d58abedaacb364725261136acffdb0deb3496302e9ccadc70c",
+   "fingerprint": "975315822aa84bddf3a9210e0a572a6aa613154e20006871a30e6b6ba79e1fe8",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2757,9 +2912,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "azure"
+   "card_colour": "azure",
+   "fingerprint_old": "cc541e46984b14d58abedaacb364725261136acffdb0deb3496302e9ccadc70c"
   },
   {
    "serial": "QW-000144",
@@ -2809,7 +2969,7 @@
    "size": 64,
    "frames": 9,
    "made": "2026-11-22 11:11",
-   "fingerprint": "f17342289730b1cc1798a7131bc57913e152029ecd7f82a48e684dda235d5f98",
+   "fingerprint": "88b5ec27b026d70b813f0d4ccdfa528849ed9ecc0b7cdd657ad50447daf34cc8",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2817,9 +2977,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "violet"
+   "card_colour": "violet",
+   "fingerprint_old": "f17342289730b1cc1798a7131bc57913e152029ecd7f82a48e684dda235d5f98"
   },
   {
    "serial": "QW-000147",
@@ -2849,7 +3014,7 @@
    "size": 64,
    "frames": 1,
    "made": "2026-11-22 12:15",
-   "fingerprint": "a9b7468c5007645e74f6d301233b9181e78dd61b3a60308fcb442706bfce2a73",
+   "fingerprint": "fb1f7ccd67b5e7a8163c04e5634e8e26ab1c5a317dd173e9d45cf86069adabb9",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2857,9 +3022,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "indigo"
+   "card_colour": "indigo",
+   "fingerprint_old": "a9b7468c5007645e74f6d301233b9181e78dd61b3a60308fcb442706bfce2a73"
   },
   {
    "serial": "QW-000149",
@@ -2889,7 +3059,7 @@
    "size": 128,
    "frames": 1,
    "made": "2026-11-22 13:03",
-   "fingerprint": "2425bc2d84459665f20b76953c140f3ba3803bc0fd431469f58edf118beb03d9",
+   "fingerprint": "4d4ae85797040643330ef390bf243178b16b1d1d5ad448b7993914f910b67dde",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2897,9 +3067,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "lime"
+   "card_colour": "lime",
+   "fingerprint_old": "2425bc2d84459665f20b76953c140f3ba3803bc0fd431469f58edf118beb03d9"
   },
   {
    "serial": "QW-000151",
@@ -2929,7 +3104,7 @@
    "size": 128,
    "frames": 1,
    "made": "2026-11-22 13:51",
-   "fingerprint": "b637a0b212b4d7945902eba38cbe1d325df706f603e03407e042d8d6879c5987",
+   "fingerprint": "7280ee59b97532fb02b728e7ad4ebe6d66070b9dfc9a576600fa1d833d034284",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -2937,9 +3112,14 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
-   "card_colour": "orange"
+   "card_colour": "orange",
+   "fingerprint_old": "b637a0b212b4d7945902eba38cbe1d325df706f603e03407e042d8d6879c5987"
   },
   {
    "serial": "QW-000153",
@@ -3009,7 +3189,7 @@
    "size": 64,
    "frames": 8,
    "made": "2026-11-22 18:16",
-   "fingerprint": "9643aa513924006cef6407b85e8d5c195113a7560e4ce380feaf8a06fb20f72f",
+   "fingerprint": "4e9b20de22ec544159b90f5519dcce2fb1169973cf595eafb525f03035d7a912",
    "owner": "",
    "requested": false,
    "status": "for sale",
@@ -3017,10 +3197,15 @@
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-22",
+     "event": "picture corrected (gallery builder fault), new fingerprint"
     }
    ],
    "card_colour": "green",
-   "blurb": "Beneath candy-colored stars, a little mint arcade cabinet offers a quiet hello, saving a spark of joy for the next wanderer."
+   "blurb": "Beneath candy-colored stars, a little mint arcade cabinet offers a quiet hello, saving a spark of joy for the next wanderer.",
+   "fingerprint_old": "9643aa513924006cef6407b85e8d5c195113a7560e4ce380feaf8a06fb20f72f"
   },
   {
    "serial": "QW-000157",
