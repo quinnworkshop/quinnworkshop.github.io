@@ -44,6 +44,7 @@
     if (window.QuinnLive && QuinnLive.mode) QuinnLive.mode(mode);
   }
   function look(to) {
+    window.__screenZoom = (to === 'front');   // 22 Nov (Sam): true while the view is zoomed into the screen; the next click anywhere in the room zooms back out
     try { frame.contentWindow.ROOM.look(to === 'front' ? 'full' : 'room'); } catch (e) {}   // 22 Nov (Sam): while she paints or shows a painting the screen is centred and zoomed in (the full frame), not the middle zoom
   }
   PIECES.forEach(function (p, i) {
@@ -347,6 +348,7 @@
     f.onload = function () { f.contentWindow.focus(); };
   }
   function clickRoom(e) {
+    if (window.__screenZoom) { e.preventDefault(); look('room'); return; }   // 22 Nov (Sam): zoomed into the screen: one more click goes back to the normal room
     var s = scene(e), h = what(s); if (!h) return;
     e.preventDefault();
     var k = h[0];
