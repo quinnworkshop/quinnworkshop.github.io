@@ -152,7 +152,7 @@
       }
     }
     if (id !== run) return true;
-    rating(rateNow); wear('chat'); look('front');
+    rating(rateNow); wear('chat'); look('room');   // 22 Nov (Sam): idle and while she paints / shows a painting: the same close view, monitor centred, light switch visible
     $('state').textContent = p.kind === 'anim' ? 'Finished. The animation is playing.' : 'Finished. This piece is a still picture.';
     try { frame.contentWindow.ROOM.showPicture(p); } catch (e) {}
     window.__replayOn = true;
@@ -186,7 +186,7 @@
     window.__cur = i; buyPanel(p);
     [].forEach.call($('gal').children, function (b, n) { b.classList.toggle('on', n === i); });
     $('stars').textContent = ''; $('rate').textContent = 'She rates a piece when it is finished.'; $('state').textContent = 'Getting the recording ready';
-    wear('chat'); look('front');
+    wear('chat'); look('room');   // 22 Nov (Sam): idle and while she paints / shows a painting: the same close view, monitor centred, light switch visible
     if (STORY._intro && !window.__introDone) {
       window.__introDone = true; $('state').textContent = 'Quinn introduces herself'; await sl(500);
       await type(STORY._intro, id, 'intro'); await sl(900); if (id !== run) return;
@@ -201,7 +201,7 @@
     if (!rec) {
       var replayed = await replay(p, id, rateNow);
       if (replayed || id !== run) return;
-      rating(rateNow); wear('chat'); look('front');
+      rating(rateNow); wear('chat'); look('room');   // 22 Nov (Sam): idle and while she paints / shows a painting: the same close view, monitor centred, light switch visible
       $('state').textContent = 'Finished. This piece is a still picture.'; try { frame.contentWindow.ROOM.showPicture(p); } catch (e) {}
       setTimeout(function () { if (id === run) wear('rest'); }, 9000);
       return;
@@ -219,7 +219,7 @@
     clearInterval(pump);
     if (id !== run) return;
     (tl.events || []).forEach(function (ev, n) { if (!seen[n]) { seen[n] = true; if (ev.type === 'rate') rateNow = ev; applyEvent(ev, id, p); } });
-    rating(rateNow); wear('chat'); look('front');
+    rating(rateNow); wear('chat'); look('room');   // 22 Nov (Sam): idle and while she paints / shows a painting: the same close view, monitor centred, light switch visible
     $('state').textContent = p.kind === 'anim' ? 'Finished. The animation is playing.' : 'Finished.'; try { frame.contentWindow.ROOM.showPicture(p); } catch (e) {}
     setTimeout(function () { if (id === run) wear('rest'); }, 9000);
   }

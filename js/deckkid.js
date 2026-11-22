@@ -17,7 +17,7 @@ const DeckKid = (() => {
   const MON = { x: 528, y: 190, w: 494, h: 526 };
   const CTL = [
     { id: 'chan', kind: 'dial', cx: 1100, cy: 628, r: 17, label: 'MOVE' }, { id: 'vol', kind: 'dial', cx: 1100, cy: 676, r: 11, label: 'VOLUME' },
-    { id: 'light', kind: 'switch', cx: 1300, cy: 440, r: 12, label: 'LIGHT' },   // version 110 (Sam): the room's main light, on the wall by the bookcase
+    { id: 'light', kind: 'switch', cx: 1240, cy: 440, r: 12, label: 'LIGHT' },   // 22 Nov 2026 (Sam): moved from x 1300 to 1240 (right beside the pegboard) so the room can be zoomed in more with the monitor centred and the switch still fully visible   // version 110 (Sam): the room's main light, on the wall by the bookcase
     { id: 'select', kind: 'btn', cx: 590, cy: chinY(590), r: 7, label: 'SELECT' }, { id: 'view', kind: 'btn', cx: 1100, cy: 578, r: 8, label: 'VIEW', col: '#f0a030' }, { id: 'start', kind: 'btn', cx: 624, cy: chinY(624), r: 7, label: 'START' },
     { id: 'y', kind: 'btn', cx: 862, cy: chinY(862), r: 7, label: 'Y', col: '#3aa85a' }, { id: 'x', kind: 'btn', cx: 888, cy: chinY(888), r: 7, label: 'X', col: '#3a5fd0' },
     { id: 'b', kind: 'btn', cx: 914, cy: chinY(914), r: 7, label: 'B', col: '#e8c12e' }, { id: 'a', kind: 'btn', cx: 940, cy: chinY(940), r: 7, label: 'A', col: '#d23a3a' }];
@@ -217,7 +217,7 @@ const DeckKid = (() => {
   function setTurn(s) { QUAD = mixQ(Q34, QFR, s); GLASSOUT = mixQ(G34, GFR, s); FRONT = mixQ(F34, FFR, s); DEPTH = [D34[0] + (DFR[0] - D34[0]) * s, D34[1] + (DFR[1] - D34[1]) * s];
     QC = [(QUAD[0][0] + QUAD[2][0]) / 2, (QUAD[0][1] + QUAD[2][1]) / 2]; CTL.forEach(c => { if (c.kind === 'btn' && c.id !== 'view') c.cy = chinY(c.cx); }); }
   let fullFar = 2, roomFar = .58, roomCx = 780, roomCy = 390;
-  const MON_CX = 780, SWITCH_EDGE = 1320;   // 22 Nov 2026 (Sam): the room zoomed in more, both upright and sideways, the view always ends just behind the light switch (switch at cx 1300, r 12) so it is fully visible at the border
+  const MON_CX = 780, SWITCH_EDGE = 1262;   // switch plate + its LIGHT label end at about x 1256   // 22 Nov 2026 (Sam): the room zoomed in more, both upright and sideways, the view always ends just behind the light switch (switch at cx 1300, r 12) so it is fully visible at the border
   const VIEWS = { wide: { far: .4, cx: 800, cy: 470, turn: 0 }, room: { get far() { return roomFar; }, get cx() { return roomCx; }, get cy() { return roomCy; }, turn: 0 }, front: { far: .85, cx: 775, cy: 430, turn: 1 }, full: { get far() { return fullFar; }, cx: 775, cy: 418, turn: 1 } };
   const ORDER = ['room', 'front', 'full', 'wide'];
   let cam = { far: .58, cx: 775, cy: 440, turn: 0 }, from = null, to = null, step = 0, N = 14, view = 'room';
