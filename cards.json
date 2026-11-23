@@ -3217,12 +3217,16 @@
    "made": "2026-11-22 07:24",
    "fingerprint": "2f1937f010119d18fd4ba934a16e60766f35a8d03418b1c8da1d2a126ab3c90d",
    "owner": "",
-   "requested": false,
+   "requested": true,
    "status": "for sale",
    "history": [
     {
      "date": "2026-11-22",
      "event": "made by Quinn"
+    },
+    {
+     "date": "2026-11-23",
+     "event": "record corrected: made from JohnMcBurbonTV's request \"A twinkling disco ball animation\" (saved as her own idea after a brain restart)"
     }
    ],
    "card_colour": "grey"
