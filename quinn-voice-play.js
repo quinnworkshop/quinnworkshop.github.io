@@ -6,7 +6,7 @@ window.QuinnVoice = (function () {
   // always OFF when the page opens: browsers only play sound after a click, and that first click starts her spoken introduction (Sam, 17 Nov)
   function V() { return window.QUINN_VOICE || {}; }
   function R() { return window.QUINN_REACT || {}; }
-  function label() { var b = document.getElementById('vbtn'); if (b) { b.textContent = on ? 'ON' : 'OFF'; b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.classList.toggle('on', !!on); b.title = "Quinn's voice"; } }   // 22 Nov 2026 (Sam): just ON / OFF next to her name
+  function label() { var b = document.getElementById('vbtn'); if (b) b.textContent = "QUINN'S VOICE: " + (on ? 'ON' : 'OFF'); }
   function stop() { if (cur) { try { cur.pause(); } catch (e) {} cur = null; } }
   function play(file, rate, vol, keepPitch) {
     return new Promise(function (res) {
