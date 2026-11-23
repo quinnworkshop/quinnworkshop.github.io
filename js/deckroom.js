@@ -288,7 +288,7 @@ const DeckRoom = (() => {
   function applyVol() { if (typeof out !== 'undefined' && out && !(typeof OfflineAudioContext !== 'undefined' && out.context instanceof OfflineAudioContext)) { const t = volA * .9; if (Math.abs(out.gain.value - t) > .001) out.gain.value = t; } }
   const inRoom = () => !!window.deckTV && ['nerd', 'close', 'amigaroom', 'lwroom', 'kidroom'].includes(window.deckTV);
   const kidNow = () => window.deckTV === 'kidroom' && STYLE === 'kid' && typeof DeckKid !== 'undefined';
-  const fullNow = () => kidNow() && DeckKid.fullness() > .9;
+  const fullNow = () => kidNow() && DeckKid.view === 'front' && DeckKid.cam().turn > .9;   // 23 Nov 2026 (Sam): a click turns the screen FRONTAL, never the full frame
   const onMonitor = e => { if (!kidNow()) return false; const [sx, sy] = toScene(e.clientX, e.clientY), m = DeckKid.MON; return sx >= m.x && sx <= m.x + m.w && sy >= m.y && sy <= m.y + m.h; };
   // version 110: a small prompt by the pointer says what can be clicked and what it does
   let tip = null;
@@ -301,12 +301,12 @@ const DeckRoom = (() => {
   function tipFor(e) {
     if (!inRoom()) return '';
     const over = e.target === cv || (typeof $ === 'function' && $('bezel') && $('bezel').contains(e.target));
-    if (kidNow() && over) return fullNow() ? '' : 'CLICK: ZOOM IN TO THE SCREEN';
+    if (kidNow() && over) return fullNow() ? '' : 'CLICK: TURN THE SCREEN TO YOU';
     if (e.target !== rc) return '';
-    if (fullNow()) return 'CLICK: ZOOM OUT TO THE ROOM';
+    if (fullNow()) return 'CLICK: BACK TO THE ROOM';
     const h2 = hit(e);
     if (h2) { const c = h2[0]; return c.id === 'vol' ? 'VOLUME ' + Math.round(volA * 100) + '%: DRAG UP OR DOWN, WHEEL, OR CLICK TOP / BOTTOM' : c.id === 'light' ? 'LIGHT: CLICK TO SWITCH ' + (DeckKid.dark ? 'ON' : 'OFF') : TIPS[c.id] || c.label; }
-    if (onMonitor(e)) return 'CLICK: ZOOM IN TO THE SCREEN';
+    if (onMonitor(e)) return 'CLICK: TURN THE SCREEN TO YOU';
     return '';
   }
   function hook() {
@@ -316,7 +316,7 @@ const DeckRoom = (() => {
     const bz = $('bezel');
     if (bz) bz.addEventListener('pointerdown', e => {
       if (!kidNow() || fullNow()) return;
-      DeckKid.go('full'); showTip(e, '');
+      DeckKid.go('front'); showTip(e, '');
       if (typeof view !== 'undefined' && view === 'off') return;   // a deck that is off is switched on by the same click
       e.stopPropagation(); e.preventDefault();
     }, true);
@@ -328,7 +328,7 @@ const DeckRoom = (() => {
       if (!inRoom()) return;
       if (kidNow() && fullNow()) { e.preventDefault(); DeckKid.go('room'); showTip(e, ''); return; }   // fully zoomed in: a click in the dark round the screen zooms out
       const h2 = hit(e);
-      if (!h2) { if (onMonitor(e)) { e.preventDefault(); DeckKid.go('full'); showTip(e, ''); } return; }
+      if (!h2) { if (onMonitor(e)) { e.preventDefault(); DeckKid.go('front'); showTip(e, ''); } return; }
       e.preventDefault(); audio && audio(); const [c, sx, sy] = h2;
       if (c.id === 'chan') { const dx = sx - c.cx, dy = sy - c.cy; dialDir = Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 'left' : 'right') : (dy < 0 ? 'up' : 'down'); chanA = { up: 0, right: 1.2, down: Math.PI, left: -1.2 }[dialDir]; held.chan = true; press(dialDir, true); }
       else if (c.id === 'vol') { held.vol = true; volDrag = { y: e.clientY, v: volA, sy: sy, cy: c.cy, moved: false }; }
@@ -353,6 +353,6 @@ const DeckRoom = (() => {
   }
   let kidIn = false;
   function start(canvas, m, style) { if (style === 'kid' && typeof DeckKid !== 'undefined') { const cs = consoleScreen(); DeckKid.fitRoom(innerWidth, innerHeight, Math.min(cs[0] / SCRV.w, cs[1] / SCRV.h)); } if (style === 'kid' && !kidIn && typeof DeckKid !== 'undefined') { kidIn = true; DeckKid.enter(); } if (style !== 'kid') kidIn = false;
-    layout(canvas, m, style); if (!timer) timer = setInterval(() => { if (!window.deckTV || !['nerd', 'close', 'amigaroom', 'lwroom', 'kidroom'].includes(window.deckTV)) { clearInterval(timer); timer = null; kidIn = false; return; } if (STYLE === 'kid' && DeckKid.tick()) layout(rc, mode, STYLE); else frame(); }, STYLE === 'kid' ? 70 : 100); }
+    layout(canvas, m, style); if (!timer) timer = setInterval(() => { if (!window.deckTV) return;   /* 23 Nov 2026: not set yet on a slow load = wait, do not stop the room's clock (the camera froze and clicks did nothing) */ if (!['nerd', 'close', 'amigaroom', 'lwroom', 'kidroom'].includes(window.deckTV)) { clearInterval(timer); timer = null; kidIn = false; return; } if (STYLE === 'kid' && DeckKid.tick()) layout(rc, mode, STYLE); else frame(); }, STYLE === 'kid' ? 70 : 100); }
   return { start, layout, frame };
 })();

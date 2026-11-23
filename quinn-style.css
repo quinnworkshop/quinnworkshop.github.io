@@ -157,3 +157,31 @@ header .sparks span,header .tail{font-size:0}
 }
 @media (max-width:600px) and (min-width:420px){.sparks{display:flex}}
 html,body{overflow-x:hidden}
+
+/* ===== v8 (23 Nov 2026, Sam): PC layout like the stream. Below the title, one full-screen part: the room on the left, edge to edge
+   with no frame (as on the stream), Quinn at the top right, the gallery where the stream has the chat. Scroll down once and only
+   the room and Quinn fill the screen. Phones and tablets (900 px and less) are unchanged. ===== */
+@media (min-width:901px){
+  html,body{height:auto}
+  body{display:block}
+  main{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,22vw,440px);gap:0;padding:0;height:100vh;min-height:520px}
+  #shop{border:0;border-radius:0;box-shadow:none;min-height:0;height:100%;background:#05040a}
+  aside{height:100%;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:10px;padding:10px;background:#0d0d28}
+  aside .card{background:#0d0d28;border:2px solid #ffb84d;border-radius:6px;box-shadow:none;padding:10px 12px}
+  aside .card h2{background:none;box-shadow:none;padding:0;color:var(--cyan);font-size:14px;letter-spacing:2px}
+  aside .card h2 small{color:var(--text2)}
+  .quinn-header{margin-bottom:8px}
+  #who{flex-direction:column;align-items:center}
+  #face{width:min(100%,34vh);height:auto;aspect-ratio:1;border:2px solid #ffb84d;box-shadow:none}
+  #say{min-height:0;margin:8px 0 0;font-size:15px;max-height:12vh;overflow:auto}
+  #state{margin-top:4px}
+  #music{display:none}
+  aside .card:has(#stars){display:none}
+  aside .card:has(#gal){flex:1;min-height:0;display:flex;flex-direction:column}
+  #gal{flex:1;min-height:0;overflow:auto;grid-template-columns:repeat(3,minmax(0,1fr));align-content:start;padding:2px}
+  #gal button{box-shadow:none;border:2px solid #2a2a5a}
+  #gal button:hover{transform:none;border-color:#ffb84d;box-shadow:none}
+  #gal button.on{border-color:var(--pink)}
+}
+@media (min-width:901px){ #gal{grid-auto-rows:max-content} #gal button{overflow:visible} #gal canvas{flex:none} }
+@media (min-width:901px){ #gal{overflow-x:hidden;scrollbar-color:#ffb84d #0d0d28;scrollbar-width:thin} }

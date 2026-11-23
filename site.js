@@ -45,7 +45,7 @@
   }
   function look(to) {
     window.__screenZoom = (to === 'front');   // 22 Nov (Sam): true while the view is zoomed into the screen; the next click anywhere in the room zooms back out
-    try { frame.contentWindow.ROOM.look(to === 'front' ? 'full' : 'room'); } catch (e) {}   // 22 Nov (Sam): while she paints or shows a painting the screen is centred and zoomed in (the full frame), not the middle zoom
+    try { frame.contentWindow.ROOM.look(to === 'front' ? 'front' : 'room'); } catch (e) {}   // 22 Nov (Sam): while she paints or shows a painting the screen is centred and zoomed in (the full frame), not the middle zoom
   }
   PIECES.forEach(function (p, i) {
     var b = document.createElement('button'), c = document.createElement('canvas'), k = 0;
@@ -228,7 +228,7 @@
   var box = function (s, x, y, w, h) { return !!s && s.sx >= x && s.sx <= x + w && s.sy >= y && s.sy <= y + h; };
   function what(s) {
     if (!s) return null;
-    if (near(s, 1300, 440, 20)) return ['light', 'CLICK: switch the room light on or off'];
+    if (near(s, 1240, 440, 20)) return ['light', 'CLICK: switch the room light on or off'];
     if (near(s, 1100, 676, 18)) return ['volume', 'VOLUME: drag up or down, or click the top half for louder and the bottom half for softer'];
     if (near(s, 1100, 578, 15)) return ['music', 'CLICK: music on or off'];
     if (near(s, 1100, 628, 24)) return ['dial', 'SONG DIAL: click the right side for the next song, or drag / scroll the wheel'];
