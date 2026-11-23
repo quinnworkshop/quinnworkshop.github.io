@@ -1,0 +1,159 @@
+/* QUINN STYLE v2 (22 Nov 2026): built EXACTLY from Grok's build sheet (creative director, Grok chat "Website Design Matching Pixel Quinn Stream
+   Screens"), made from the approved Be Right Back / Starting Soon screens. Claude only copied the values. Loaded after site.css. */
+:root{--wall1:#1a1a3e;--wall2:#2a2a5a;--cyan:#00e5ff;--plaque:#0a0a2e;--mint:#7dffc8;--gold:#ffd700;--pink:#ff4d9e;--cream:#fff5c0;
+  --purple:#c77dff;--fill:#0d0d28;--text:#e0e0ff;--text2:#a0a0d0;--gcyan:rgba(0,229,255,.55);--gpurple:rgba(199,125,255,.45);--gpink:rgba(255,77,158,.5)}
+body{background-color:var(--wall1);background-image:repeating-linear-gradient(90deg,#1a1a3e 0px,#1a1a3e 28px,#2a2a5a 28px,#2a2a5a 56px);
+  min-height:100vh;color:var(--text);font-family:'Outfit',sans-serif;font-size:15px}
+/* header: fairy lights, plaque, ribbon, links */
+header{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;padding:40px 16px 14px;border-bottom:0;background:none}
+.fairy-lights{position:absolute;top:12px;left:0;right:0;height:20px;display:flex;justify-content:space-around;pointer-events:none;z-index:5}
+.fairy-lights span{width:10px;height:10px;border-radius:50%;background:var(--purple);box-shadow:0 0 8px var(--purple),0 0 16px var(--purple)}
+.fairy-lights span:nth-child(3n){background:var(--cyan);box-shadow:0 0 8px var(--cyan),0 0 16px var(--cyan)}
+.fairy-lights span:nth-child(3n+1){background:var(--pink);box-shadow:0 0 8px var(--pink),0 0 16px var(--pink)}
+.plaque{display:inline-flex;align-items:center;gap:12px;padding:14px 28px 16px;background:var(--plaque);border:4px solid var(--cyan);border-radius:12px;margin:0;
+  box-shadow:0 0 0 3px #0a0a2e,0 0 18px rgba(0,229,255,.55),0 0 40px rgba(0,229,255,.25),inset 0 0 12px rgba(0,229,255,.15);position:relative}
+.plaque .star{color:var(--gold);font-size:22px;text-shadow:0 0 8px rgba(255,215,0,.8)}
+.plaque .quinns{font-family:'Press Start 2P',monospace;font-size:28px;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.4);letter-spacing:1px}
+.plaque .workshop{font-family:'Press Start 2P',monospace;font-size:28px;color:var(--mint);text-shadow:0 0 12px rgba(125,255,200,.6);letter-spacing:1px}
+.ribbon{display:inline-block;margin-top:-6px;padding:10px 36px 12px;background:var(--pink);color:var(--cream);font-family:'Silkscreen',monospace;font-size:18px;
+  font-weight:700;letter-spacing:1px;text-transform:uppercase;position:relative;box-shadow:0 4px 0 #c23070,0 0 20px rgba(255,77,158,.5);border-radius:4px;line-height:22px}
+.ribbon::before,.ribbon::after{content:'';position:absolute;top:0;width:0;height:0;border-style:solid}
+.ribbon::before{left:-18px;border-width:22px 18px 22px 0;border-color:transparent #ff4d9e transparent transparent}
+.ribbon::after{right:-18px;border-width:22px 0 22px 18px;border-color:transparent transparent transparent #ff4d9e}
+.times{color:var(--text2);font-size:14px;text-align:center}
+nav.toplinks{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px}
+nav.toplinks a,nav.toplinks button{color:var(--mint)!important;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;
+  font-family:'Outfit',sans-serif!important;font-size:15px!important;background:none!important;border:0!important;margin:0!important;cursor:pointer}
+nav.toplinks a:hover,nav.toplinks button:hover{color:var(--pink)!important;text-shadow:0 0 8px rgba(255,77,158,.7);background:rgba(255,77,158,.1)!important}
+header>p.about-line{color:var(--text2);font-size:13px;margin:0;text-align:center}
+/* every box: neon double frame */
+#shop,.card{background:var(--fill);border:3px solid var(--cyan);border-radius:10px;
+  box-shadow:0 0 0 3px #c77dff,0 0 14px rgba(0,229,255,.5),0 0 28px rgba(199,125,255,.25),inset 0 0 18px rgba(0,0,30,.5)}
+main{gap:24px;padding:16px 20px 24px}
+.card{padding:16px}
+.card h2{font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;color:var(--cream);background:var(--pink);display:inline-block;
+  padding:4px 14px;border-radius:4px;box-shadow:0 3px 0 #c23070,0 0 12px rgba(255,77,158,.4);text-transform:uppercase}
+.card h2 small{color:var(--cream);opacity:.85}
+#say{color:var(--text)}#state{color:var(--mint)}#rate{color:var(--text2)}#stars{color:var(--gold)}
+#face{border:2px solid var(--cyan);box-shadow:0 0 0 2px #c77dff}
+/* gallery tiles */
+#gal{gap:12px}
+#gal button{background:var(--fill);border:2px solid var(--cyan);box-shadow:0 0 0 2px #c77dff,0 0 10px rgba(0,229,255,.35);border-radius:8px;overflow:hidden;
+  transition:transform .2s,box-shadow .2s;color:var(--text);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600}
+#gal button:hover{transform:translateY(-3px);box-shadow:0 0 0 2px #c77dff,0 0 18px rgba(0,229,255,.6)}
+#gal button.on{border-color:var(--pink)}
+/* buttons */
+#buybtn,.btn{display:inline-block;background:var(--pink);color:var(--cream);font-family:'Silkscreen',monospace;font-size:14px;padding:10px 20px;border:none;border-radius:6px;
+  box-shadow:0 3px 0 #c23070,0 0 12px rgba(255,77,158,.4);cursor:pointer;text-decoration:none}
+#buybtn:hover,.btn:hover{transform:translateY(-1px);box-shadow:0 4px 0 #c23070,0 0 18px rgba(255,77,158,.6)}
+footer{border-top:0;color:var(--text2)}
+/* responsive (Grok: 600-900 px plaque 22-24, ribbon 16, gallery 2 columns; under 600 px plaque 18, ribbon 14, bulbs 7-8 px) */
+@media (max-width:900px){
+  .plaque .quinns,.plaque .workshop{font-size:22px}
+  .ribbon{font-size:16px}
+  header>span{display:block!important}
+}
+@media (max-width:600px){
+  .plaque{padding:10px 16px 12px;gap:8px}
+  .plaque .quinns,.plaque .workshop{font-size:18px}
+  .plaque .star{font-size:16px}
+  .ribbon{font-size:14px;padding:8px 24px}
+  .ribbon::before{left:-16px;border-width:19px 16px 19px 0}.ribbon::after{right:-16px;border-width:19px 0 19px 16px}
+  .fairy-lights span{width:7px;height:7px}
+  #gal{grid-template-columns:repeat(2,1fr);gap:10px}
+  nav.toplinks{gap:8px}
+  main{padding:12px}
+}
+@media (max-width:900px) and (orientation:landscape) and (max-height:560px){
+  header{padding:30px 12px 8px;gap:6px}
+  .plaque{padding:8px 16px}
+  .plaque .quinns,.plaque .workshop{font-size:18px}
+  .ribbon{font-size:13px;padding:6px 22px}
+  .ribbon::before{left:-14px;border-width:17px 14px 17px 0}.ribbon::after{right:-14px;border-width:17px 0 17px 14px}
+}
+/* fit fixes (Claude, plumbing only: sizes so nothing sticks out; Grok's look unchanged) */
+@media (max-width:600px){
+  .plaque{max-width:calc(100vw - 32px);padding:10px 12px 12px;gap:6px}
+  .plaque .quinns,.plaque .workshop{font-size:15px}
+  .plaque .star{font-size:13px}
+}
+@media (max-width:900px) and (orientation:landscape) and (max-height:560px){
+  header{flex-direction:row;flex-wrap:wrap;justify-content:center;padding:26px 10px 6px;gap:6px 14px}
+  .plaque .quinns,.plaque .workshop{font-size:14px}.plaque{padding:6px 12px}.plaque .star{font-size:12px}
+  .ribbon{margin-top:0;font-size:12px;padding:5px 20px;line-height:16px}
+  .ribbon::before{left:-13px;border-width:13px 13px 13px 0}.ribbon::after{right:-13px;border-width:13px 0 13px 13px}
+  .times,header>p.about-line{display:none}
+  nav.toplinks a,nav.toplinks button{font-size:13px!important;padding:4px 8px}
+}
+
+/* ===== v5 (23 Nov 2026): Grok's second sheet (Sam's changes). Ribbon = Grok's description built with correct shapes:
+   wide hot-pink banner, V-cut swallowtail tails with darker pink folds, yellow spark lines; bigger text. ===== */
+.ribbon-wrap{position:relative;display:inline-flex;align-items:center;margin:4px 0 10px}
+.ribbon-wrap .ribbon{position:relative;display:inline-block;margin:0;padding:12px 48px 14px;background:#ff4d9e;color:#fff5c0;font-family:'Silkscreen',monospace;
+  font-size:22px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-align:center;border-radius:3px;line-height:26px;
+  box-shadow:0 4px 0 #c23070,0 0 22px rgba(255,77,158,.55);z-index:2}
+.ribbon-wrap .ribbon::before,.ribbon-wrap .ribbon::after{content:none;border:0}
+.tail{position:relative;width:46px;height:44px;background:#e8388a;top:12px;z-index:1;box-shadow:0 4px 0 #c23070}
+.tail.left{margin-right:-14px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,30% 50%)}
+.tail.right{margin-left:-14px;clip-path:polygon(0 0,100% 0,70% 50%,100% 100%,0 100%)}
+.tail::after{content:'';position:absolute;top:0;width:14px;height:12px;background:#9e1f5a}
+.tail.left::after{right:0;clip-path:polygon(100% 0,100% 100%,0 0)}
+.tail.right::after{left:0;clip-path:polygon(0 0,100% 0,0 100%)}
+.sparks{position:absolute;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:5px;z-index:1}
+.sparks.left{left:-36px}.sparks.right{right:-36px}
+.sparks span{display:block;width:14px;height:3px;background:#ffd700;border-radius:2px;box-shadow:0 0 6px #ffd700}
+.sparks.left span{transform-origin:right center}.sparks.right span{transform-origin:left center}
+.sparks.left span:nth-child(1){transform:rotate(-18deg);width:16px}.sparks.left span:nth-child(2){width:12px}.sparks.left span:nth-child(3){transform:rotate(16deg);width:15px}
+.sparks.right span:nth-child(1){transform:rotate(18deg);width:16px}.sparks.right span:nth-child(2){width:12px}.sparks.right span:nth-child(3){transform:rotate(-16deg);width:15px}
+.nav-buttons{display:flex;justify-content:center;gap:16px;margin:6px 0 4px}
+.neon-btn{display:inline-block;padding:10px 22px;background:#0d0d28;color:#7dffc8;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5px;
+  text-decoration:none;border:2px solid #00e5ff;border-radius:8px;box-shadow:0 0 0 2px #c77dff,0 0 12px rgba(0,229,255,.4);transition:all .2s ease;cursor:pointer;margin:0}
+.neon-btn:hover{color:#fff5c0;background:#ff4d9e;border-color:#ff4d9e;box-shadow:0 0 0 2px #ff4d9e,0 0 18px rgba(255,77,158,.55)}
+.platform-links{display:flex;justify-content:center;gap:28px;margin:4px 0 6px}
+.platform-links a{position:relative;color:#7dffc8;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;letter-spacing:1px;text-decoration:none;padding-bottom:4px;transition:color .2s}
+.platform-links a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:#00e5ff;box-shadow:0 0 6px rgba(0,229,255,.7);opacity:.7;transition:opacity .2s,background .2s}
+.platform-links a:hover{color:#ff4d9e}.platform-links a:hover::after{background:#ff4d9e;box-shadow:0 0 8px rgba(255,77,158,.7);opacity:1}
+.quinn-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.quinn-header h2{margin:0}
+.voice-toggle{flex-shrink:0;min-width:52px;padding:5px 10px;background:#0d0d28;color:#a0a0d0;font-family:'Silkscreen',monospace;font-size:12px;font-weight:700;letter-spacing:.5px;
+  border:2px solid #5a5a8a;border-radius:6px;cursor:pointer;box-shadow:0 0 0 1px #3a3a6a;transition:all .2s ease}
+.voice-toggle[aria-pressed="true"],.voice-toggle.on{color:#fff5c0;background:#ff4d9e;border-color:#ff4d9e;box-shadow:0 0 0 1px #ff4d9e,0 0 10px rgba(255,77,158,.5)}
+.voice-toggle:hover{border-color:#00e5ff}
+@media (max-width:900px){
+  .ribbon-wrap .ribbon{font-size:18px;padding:10px 40px 12px;line-height:22px}
+  .tail{height:40px;top:10px}
+  .sparks.left{left:-34px}.sparks.right{right:-34px}
+  .neon-btn{font-size:14px;padding:9px 18px}
+  .platform-links{gap:22px}.platform-links a{font-size:13px}
+}
+@media (max-width:600px){
+  .ribbon-wrap .ribbon{font-size:15px;padding:9px 26px 11px;letter-spacing:1px;line-height:18px}
+  .tail{width:34px;height:34px;top:9px}.tail.left{margin-right:-10px}.tail.right{margin-left:-10px}
+  .sparks.left{left:-26px}.sparks.right{right:-26px}.sparks span{width:11px;height:2.5px}
+  .nav-buttons{gap:10px}.neon-btn{font-size:14px;padding:9px 14px}
+  .platform-links{gap:18px;flex-wrap:wrap}.platform-links a{font-size:13px}
+  .quinn-header{gap:8px}.voice-toggle{min-width:48px;font-size:11px;padding:4px 8px}
+}
+@media (max-width:900px) and (orientation:landscape) and (max-height:560px){
+  .ribbon-wrap{margin:0}.ribbon-wrap .ribbon{font-size:13px;padding:5px 22px;line-height:16px}
+  .tail{width:26px;height:24px;top:7px}.tail::after{width:8px;height:7px}
+  .sparks{display:none}.nav-buttons{margin:0;gap:8px}.neon-btn{font-size:12px;padding:5px 10px}
+  .platform-links{margin:0;gap:14px}
+}
+/* overrides of old site.css rules (header span, #aboutbtn) so Grok's ribbon text and buttons show as designed */
+header .ribbon-wrap .ribbon .ribbon-text{font:inherit;color:inherit;letter-spacing:inherit}
+header .sparks span,header .tail{font-size:0}
+#aboutbtn.neon-btn{background:#0d0d28;color:#7dffc8;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5px;border:2px solid #00e5ff;
+  border-radius:8px;box-shadow:0 0 0 2px #c77dff,0 0 12px rgba(0,229,255,.4);padding:10px 22px}
+#aboutbtn.neon-btn:hover{color:#fff5c0;background:#ff4d9e;border-color:#ff4d9e;box-shadow:0 0 0 2px #ff4d9e,0 0 18px rgba(255,77,158,.55)}
+@media (max-width:900px){#aboutbtn.neon-btn{font-size:14px;padding:9px 18px}}
+@media (max-width:600px){#aboutbtn.neon-btn{padding:9px 14px}}
+@media (max-width:900px) and (orientation:landscape) and (max-height:560px){#aboutbtn.neon-btn{font-size:12px;padding:5px 10px}}
+/* phone fit (plumbing): the ribbon with its tails must fit 390 px; sparks only where there is room */
+@media (max-width:600px){
+  .ribbon-wrap .ribbon{font-size:14px;padding:8px 16px 10px;letter-spacing:.5px}
+  .tail{width:28px;height:32px;top:8px}.tail.left{margin-right:-8px}.tail.right{margin-left:-8px}.tail::after{width:9px;height:8px}
+  .sparks{display:none}
+}
+@media (max-width:600px) and (min-width:420px){.sparks{display:flex}}
+html,body{overflow-x:hidden}
