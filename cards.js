@@ -6,7 +6,7 @@ var API = 'https://quinn-cards.quinnworkshop.workers.dev';   // the address of t
 
 function loadCards(cb) { var s = document.createElement('script'); s.src = 'cards-data.js?t=' + Date.now();
   s.onload = function () { var r = window.QUINN_CARDS || null; if (!r || !API) return cb(r);
-    fetch(API + '/api/register').then(function (x) { return x.json(); }).then(function (o) { r.cards.forEach(function (c) { if (o[c.serial]) { c.owner = o[c.serial].owner; c.status = 'owned'; c.history = c.history.concat([{ date: o[c.serial].date, event: 'bought at the shop by ' + o[c.serial].owner, price: o[c.serial].price }]); } }); cb(r); }).catch(function () { cb(r); }); };
+    fetch(API + '/api/register').then(function (x) { return x.json(); }).then(function (o) { r.cards.forEach(function (c) { if (o[c.serial]) { c.owner = o[c.serial].owner; c.status = 'owned'; c.history = c.history.concat([{ date: o[c.serial].date, event: 'bought at the shop by ' + o[c.serial].owner, price: o[c.serial].price }]); if (o[c.serial].disputed) { c.disputed = true; c.history = c.history.concat([{ date: o[c.serial].disputed, event: 'payment disputed: no official status' }]); } } }); cb(r); }).catch(function () { cb(r); }); };
   s.onerror = function () { cb(null); }; document.head.appendChild(s); }
 function pieceOf(id) { var a = window.QUINN_PIECES || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i]; return null; }
 function drawer(canvas, p) { var n = p.size, k = 0; canvas.width = canvas.height = n;
