@@ -1,5 +1,5 @@
 {
- "next": 178,
+ "next": 179,
  "fee_percent": 20,
  "cards": [
   {
@@ -3623,6 +3623,26 @@
    "owner": "",
    "requested": false,
    "status": "for sale",
+   "history": [
+    {
+     "date": "2026-11-25",
+     "event": "made by Quinn"
+    }
+   ],
+   "card_colour": "azure"
+  },
+  {
+   "serial": "QW-000178",
+   "piece": "live-20261125-185126",
+   "title": "Chrome After Midnight",
+   "kind": "anim",
+   "size": 32,
+   "frames": 9,
+   "made": "2026-11-25 18:51",
+   "fingerprint": "274c6be5a169a95f7537ae1b32882221f01f037eb583fffd35e9185de53a07f4",
+   "owner": "",
+   "requested": true,
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-25",
