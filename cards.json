@@ -1,5 +1,5 @@
 {
- "next": 176,
+ "next": 178,
  "fee_percent": 20,
  "cards": [
   {
@@ -3590,6 +3590,46 @@
     }
    ],
    "card_colour": "emerald"
+  },
+  {
+   "serial": "QW-000176",
+   "piece": "live-20261125-182907",
+   "title": "The Last Arcade Sentinel",
+   "kind": "still",
+   "size": 128,
+   "frames": 1,
+   "made": "2026-11-25 18:29",
+   "fingerprint": "e105f2a78e788bd28fae3ba2c2e46db9addba800e4d567ae413a188c5fcb3e8c",
+   "owner": "",
+   "requested": true,
+   "status": "reserved",
+   "history": [
+    {
+     "date": "2026-11-25",
+     "event": "made by Quinn"
+    }
+   ],
+   "card_colour": "azure"
+  },
+  {
+   "serial": "QW-000177",
+   "piece": "live-20261125-184102",
+   "title": "The Last Warm Window",
+   "kind": "still",
+   "size": 64,
+   "frames": 1,
+   "made": "2026-11-25 18:41",
+   "fingerprint": "11de489392cc30f231e64069319fea8d2000903265715a5de49580c582a31f19",
+   "owner": "",
+   "requested": false,
+   "status": "for sale",
+   "history": [
+    {
+     "date": "2026-11-25",
+     "event": "made by Quinn"
+    }
+   ],
+   "card_colour": "azure"
   }
  ],
  "prices": {
