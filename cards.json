@@ -1,5 +1,5 @@
 {
- "next": 174,
+ "next": 175,
  "fee_percent": 20,
  "cards": [
   {
@@ -3540,6 +3540,26 @@
    "frames": 1,
    "made": "2026-11-25 17:41",
    "fingerprint": "e6a4752c1e6eeec1934b280edbcce67fced4a0ca302499e1979f5903e32c6e73",
+   "owner": "",
+   "requested": false,
+   "status": "for sale",
+   "history": [
+    {
+     "date": "2026-11-25",
+     "event": "made by Quinn"
+    }
+   ],
+   "card_colour": "indigo"
+  },
+  {
+   "serial": "QW-000174",
+   "piece": "live-20261125-175617",
+   "title": "Before the Forest Wakes",
+   "kind": "still",
+   "size": 64,
+   "frames": 1,
+   "made": "2026-11-25 17:56",
+   "fingerprint": "e09b6aba9f4cf455c1b545d3dd604120f483ddd83653ba8036365bc2182b5e24",
    "owner": "",
    "requested": false,
    "status": "for sale",
