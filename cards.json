@@ -1,5 +1,5 @@
 {
- "next": 172,
+ "next": 173,
  "fee_percent": 20,
  "cards": [
   {
@@ -3218,7 +3218,7 @@
    "fingerprint": "2f1937f010119d18fd4ba934a16e60766f35a8d03418b1c8da1d2a126ab3c90d",
    "owner": "",
    "requested": true,
-   "status": "for sale",
+   "status": "reserved",
    "history": [
     {
      "date": "2026-11-22",
@@ -3510,6 +3510,26 @@
     }
    ],
    "card_colour": "cyan"
+  },
+  {
+   "serial": "QW-000172",
+   "piece": "live-20261125-171946",
+   "title": "A Borrowed Star",
+   "kind": "still",
+   "size": 32,
+   "frames": 1,
+   "made": "2026-11-25 17:19",
+   "fingerprint": "4592d602795c872c711759199c6254617b2054ae9bd0bcd50ea75c4ea4d3366e",
+   "owner": "",
+   "requested": false,
+   "status": "for sale",
+   "history": [
+    {
+     "date": "2026-11-25",
+     "event": "made by Quinn"
+    }
+   ],
+   "card_colour": "teal"
   }
  ],
  "prices": {
